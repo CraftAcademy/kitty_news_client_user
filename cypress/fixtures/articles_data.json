@@ -1,0 +1,10 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Cats are better than dogs!",
+      "lead": "Have you noticed how smelly dogs are? Well that...",
+      "body": "Since the dawn of time cats have been the most awesome creatures. But one day there came dogs. And they didn't get along well. But maybe one day they will, lets hope!"
+    }
+  ]
+}
