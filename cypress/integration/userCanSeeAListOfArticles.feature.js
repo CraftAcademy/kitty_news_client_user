@@ -1,8 +1,6 @@
-const { before } = require("cypress/types/lodash");
-
 describe("A user can see list of articles", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3001");
+    cy.visit("/");
   });
 
   describe("if there are articles", () => {
