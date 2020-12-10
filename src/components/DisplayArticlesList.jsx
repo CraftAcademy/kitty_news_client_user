@@ -1,33 +1,32 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
+import { getArticles } from '../modules/getArticles'
 
 const DisplayArticlesList = () => {
-  const [articles, setArticles] = useState([])
-  const getArticles = async () => {
-    let result = await getArticlesData()
-    setArticles(result.data.articles)
-  }
+  const [articleData, setArticleData] = useState([]);
+  const getArticleData = async () => {
+    let response = await getArticles();
+    setArticleData(response);
+  };
+  
+  useEffect(() => {
+    getArticleData();
+  }, [])
 
-useEffect(() => {
-  getArticles() 
-}, [])
-let articleIndex = articles.map(article => {
+  let articleIndex = articleData.map((article) => {
+    return (
+      <>
+        <li key={article.id}>
+          {article.title}
+          {article.lead}
+        </li>
+      </>
+    );
+  });
   return (
     <>
-      <li>
-        {article.title}{article.lead}
-      </li>
+      <ul data-cy="article-index">{articleIndex}</ul>
     </>
-       
-  )
-})
-  return (
-    <>
-      <ul key={item.id} data-cy="article-index">
-        {articleIndex}
-      </ul>
-    </>
-  )
-}
+  );
+};
 
-export default DisplayArticlesList
-
+export default DisplayArticlesList;
