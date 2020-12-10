@@ -33,7 +33,13 @@ const DisplayArticlesList = () => {
   });
   return (
     <>
+    {articleData.length ?
       <ul data-cy="article-index">{articleIndex}</ul>
+      :
+      <h1 data-cy="empty-index">
+        Sorry, there's nothing to see here yet!
+      </h1>
+    }
     </>
   );
 };
