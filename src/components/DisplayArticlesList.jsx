@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getArticles } from '../modules/getArticles'
+import { Item } from 'semantic-ui-react'
 
 const DisplayArticlesList = () => {
   const [articleData, setArticleData] = useState([]);
@@ -7,7 +8,7 @@ const DisplayArticlesList = () => {
     let response = await getArticles();
     setArticleData(response);
   };
-  
+
   useEffect(() => {
     getArticleData();
   }, [])
@@ -15,10 +16,18 @@ const DisplayArticlesList = () => {
   let articleIndex = articleData.map((article) => {
     return (
       <>
-        <li key={article.id}>
-          {article.title}
-          {article.lead}
-        </li>
+        <Item.Group>
+          <Item key={article.id}>
+            <Item.Content>
+              <Item.Header >
+                {article.title}
+              </Item.Header>
+              <Item.Meta>
+                {article.lead}
+              </Item.Meta>
+            </Item.Content>
+          </Item>
+        </Item.Group>
       </>
     );
   });
