@@ -17,9 +17,9 @@ const DisplayArticlesList = () => {
     return (
       <>
         <Item.Group>
-          <Item key={article.id}>
+          <Item key={article.id} data-cy={`article-${article.id}`}>
             <Item.Content>
-              <Item.Header >
+              <Item.Header data-cy="article-title">
                 {article.title}
               </Item.Header>
               <Item.Meta>
