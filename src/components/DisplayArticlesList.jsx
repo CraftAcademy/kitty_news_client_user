@@ -19,7 +19,10 @@ const DisplayArticlesList = () => {
         <Item.Group>
           <Item key={article.id} data-cy={`article-${article.id}`}>
             <Item.Content>
-              <Item.Header data-cy="article-title">
+              <Item.Header 
+              data-cy="article-title"
+              as={NavLink} to={{ pathname: "/about" }}
+              >
                 {article.title}
               </Item.Header>
               <Item.Meta>

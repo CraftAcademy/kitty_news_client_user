@@ -27,6 +27,7 @@ describe("User can read a specific article", () => {
       it('see article content', () => {
         cy.get("[data-cy='article-display']").within(() => {
           cy.get("[data-cy='article-title']").should("contain", "Cats are better than dogs!")
+          
         })
       });
     });
