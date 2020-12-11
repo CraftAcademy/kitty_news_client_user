@@ -7,7 +7,7 @@ const App = () => {
     <>
     <Switch>
       <Route exact path ="/articles/:id" component={ShowArticle}/>
-      <DisplayArticlesList />
+      <DisplayArticlesList /> 
       </Switch>
     </>
   )
