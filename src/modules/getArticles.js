@@ -10,4 +10,4 @@ const showArticle = async () => {
   return result.data.article;
 };
 
-export { getArticles };
+export { getArticles, showArticle };

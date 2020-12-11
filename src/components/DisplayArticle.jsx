@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
+import {useParams} from 'react-router-dom'
+import {showArticle} from '../modules/getArticles'
 
-const ShowArticle = () => {
+const DisplayArticle = () => {
 
   const [specificArticle, setSpecificArticle] = useState([]);
 
   const { id } = useParams()
   useEffect(() => {
     const getSpecificArticle = async () => {
-    response = await getSpecificArticle(id)
+    const response = await showArticle(id)
     }
   }, 
   [])
@@ -23,4 +25,4 @@ const ShowArticle = () => {
   );
 };
 
-export default ShowArticle;
+export default DisplayArticle;
