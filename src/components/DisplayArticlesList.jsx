@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getArticles } from '../modules/getArticles'
 import { Item } from 'semantic-ui-react'
+import { NavLink } from 'react-router-dom'
 
 const DisplayArticlesList = () => {
   const [articleData, setArticleData] = useState([]);
@@ -21,7 +22,7 @@ const DisplayArticlesList = () => {
             <Item.Content>
               <Item.Header 
               data-cy="article-title"
-              as={NavLink} to={{ pathname: "/about" }}
+              as={NavLink} to={{ pathname: `/articles/${article.id}` }}
               >
                 {article.title}
               </Item.Header>
