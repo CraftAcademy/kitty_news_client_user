@@ -21,6 +21,7 @@ describe("User can read a specific article", () => {
         cy.visit("/");
         cy.get("[data-cy='article-1']").within(() => {
           cy.get("[data-cy='article-title']").click()
+       
         })
       });
       

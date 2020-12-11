@@ -6,8 +6,8 @@ const getArticles = async () => {
 };
 
 const showArticle = async () => {
-  const result = await axios.get("/articles/id", {});
+  const result = await axios.get(`/articles/`, {});
   return result.data.article;
 };
-
+//Removed id from line 9
 export { getArticles, showArticle };
