@@ -5,4 +5,9 @@ const getArticles = async () => {
   return response.data.articles;
 };
 
+const showArticle = async () => {
+  const result = await axios.get("/articles/id", {});
+  return result.data.article;
+};
+
 export { getArticles };
