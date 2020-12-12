@@ -13,7 +13,6 @@ const DisplayArticle = () => {
     };
     getSpecificArticle();
   }, [id]);
-
   let articleView = specificArticle.map((article) => {
     return (
       <>

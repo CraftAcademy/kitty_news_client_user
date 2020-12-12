@@ -1,10 +1,14 @@
-
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
 
 const ArticleCard = ({ article }) => {
   return (
-    <Card>
+    <Card 
+    data-cy={`article-${article.id}`}
+    key={article.id} 
+    as={NavLink} 
+    to={`/articles/${article.id}`}>
       <Image
         size="small"
         wrapped

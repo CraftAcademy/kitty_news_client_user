@@ -16,38 +16,14 @@ const DisplayArticlesList = () => {
 
   let articleIndex        
   articleIndex = (
-    <Card.Group data-cy="article-index" itemsPerRow={5}>
+    <Card.Group itemsPerRow={5}>
       {articleData.map((article) => {
-        return <ArticleCard article={{ ...article }} />;
+        return <ArticleCard 
+        article={{ ...article }} />;
       })}
     </Card.Group>
   );
 
-
-
-
-    // return (
-    //   <>
-    //     <ArticleCard article={{ ...article, id: index }} />;
-
-        {/* <Item.Group>
-          <Item key={article.id} data-cy={`article-${article.id}`}>
-            <Item.Content>
-              <Item.Header 
-              data-cy="article-title"
-              as={NavLink} to={{ pathname: `/articles/${article.id}` }}
-              >
-                {article.title}
-              </Item.Header>
-              <Item.Meta>
-                {article.lead}
-              </Item.Meta>
-            </Item.Content>
-          </Item>
-        </Item.Group> */}
-      // </>
-  //   );
-  // });
   return (
     <>
     {articleData.length ?

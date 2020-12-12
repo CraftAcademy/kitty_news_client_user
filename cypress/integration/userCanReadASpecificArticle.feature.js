@@ -19,13 +19,11 @@ describe("User can read a specific article", () => {
           response: "fixture:single_article.json",
         });
         cy.visit("/");
-        cy.get("[data-cy='article-1']").within(() => {
-          cy.get("[data-cy='article-title']").click()
-       
-        })
-      });
+        
+      }) 
       
       it('see article content', () => {
+        cy.get("[data-cy='article-1']").click()
         cy.get("[data-cy='article-display']").within(() => {
           cy.get("[data-cy='title']").should("contain", "Cats are better than dogs!")
           
