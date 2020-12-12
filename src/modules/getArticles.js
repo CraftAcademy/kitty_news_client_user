@@ -1,13 +1,15 @@
 import axios from "axios";
 
-const getArticles = async () => {
-  const response = await axios.get("/articles", {});
-  return response.data.articles;
+const getArticles = {
+	async index() {
+		let response = await axios.get("/articles");
+		return response.data.articles;
+	},
+
+	async show(articleId) {
+		let response = await axios.get(`/articles/${articleId}`);
+		return response.data.article;
+	},
 };
 
-const showArticle = async () => {
-  const result = await axios.get(`/articles/`, {});
-  return result.data.article;
-};
-//Removed id from line 9
-export { getArticles, showArticle };
+export default getArticles;

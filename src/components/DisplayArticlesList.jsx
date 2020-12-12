@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { getArticles } from '../modules/getArticles'
+import getArticles from '../modules/getArticles'
 import ArticleCard from './ArticleCard'
 import { Card } from 'semantic-ui-react'
 
 const DisplayArticlesList = () => {
   const [articleData, setArticleData] = useState([]);
   const getArticleData = async () => {
-    let response = await getArticles();
+    let response = await getArticles.index();
     setArticleData(response);
   };
 
