@@ -3,20 +3,21 @@ import { useParams } from "react-router-dom";
 import getArticles from "../modules/getArticles";
 
 const DisplayArticle = () => {
-	const [article, setArticle] = useState([]);
+	const [article, setArticle] = useState({});
   const { id } = useParams();
 	useEffect(() => {
-		const getArticle = async () => {
-			const response = await getArticles.show(id);
+		const getSpecificArticle = async () => {
+      const response = await getArticles.show(id);
+      debugger
 			setArticle(response);
 		};
-		getArticle();
+		getSpecificArticle();
 	}, [id]);
 
 	return (
 		<>
 			<div data-cy="article-display">
-				<h2 data-cy="title">Cats are better than dogs!</h2>
+				<h2 data-cy="title">{article.title}</h2>
 				<h3 data-cy="lead">{article.lead}</h3>
 				<p data-cy="body">{article.body}</p>
 			</div>
