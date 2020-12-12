@@ -1,4 +1,4 @@
-describe("User can read a specific article", () => {
+describe("User can", () => {
   beforeEach(() => {
     cy.server();
     cy.route({
@@ -19,7 +19,7 @@ describe("User can read a specific article", () => {
       cy.visit("/");
       cy.get("[data-cy='article-1']").click();
     });
-    it("see article content", () => {
+    it("read a specific article", () => {
       cy.get("[data-cy='article-display']").within(() => {
         cy.get("[data-cy='title']").should(
           "contain",

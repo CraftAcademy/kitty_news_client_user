@@ -1,5 +1,5 @@
-describe("A user can see list of articles", () => {
-  describe("if there are articles", () => {
+describe("A user  ", () => {
+  describe("can, if there are articles,", () => {
     beforeEach(() => {
       cy.server();
       cy.route({
@@ -10,7 +10,7 @@ describe("A user can see list of articles", () => {
       cy.visit("/");
     });
 
-    it("successfully", () => {
+    it("successfully see list of articles", () => {
       cy.get("[data-cy='article-index']").within(() => {
         cy.contains("Cats are better than dogs!");
         cy.contains("Have you noticed how smelly dogs are? Well that...");
@@ -23,7 +23,7 @@ describe("A user can see list of articles", () => {
       });
     });
   });
-  describe("if there are no articles", () => {
+  describe(", if there are no articles,", () => {
     before(() => {
       cy.server();
       cy.route({
@@ -33,7 +33,7 @@ describe("A user can see list of articles", () => {
       });
       cy.visit("/");
     });
-    it("unsuccessfully", () => {
+    it("is presented with an error message", () => {
       cy.get("[data-cy='article-index']").should("not.exist");
       cy.get("[data-cy='empty-index']").should("exist");
     });
