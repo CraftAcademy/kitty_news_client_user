@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getArticles } from '../modules/getArticles'
-import { Item } from 'semantic-ui-react'
-import { NavLink } from 'react-router-dom'
+import ArticleCard from './ArticleCard'
+import { Card } from 'semantic-ui-react'
 
 const DisplayArticlesList = () => {
   const [articleData, setArticleData] = useState([]);
@@ -14,10 +14,23 @@ const DisplayArticlesList = () => {
     getArticleData();
   }, [])
 
-  let articleIndex = articleData.map((article) => {
-    return (
-      <>
-        <Item.Group>
+  let articleIndex        
+  articleIndex = (
+    <Card.Group data-cy="article-index" itemsPerRow={5}>
+      {articleData.map((article) => {
+        return <ArticleCard article={{ ...article }} />;
+      })}
+    </Card.Group>
+  );
+
+
+
+
+    // return (
+    //   <>
+    //     <ArticleCard article={{ ...article, id: index }} />;
+
+        {/* <Item.Group>
           <Item key={article.id} data-cy={`article-${article.id}`}>
             <Item.Content>
               <Item.Header 
@@ -31,10 +44,10 @@ const DisplayArticlesList = () => {
               </Item.Meta>
             </Item.Content>
           </Item>
-        </Item.Group>
-      </>
-    );
-  });
+        </Item.Group> */}
+      // </>
+  //   );
+  // });
   return (
     <>
     {articleData.length ?
