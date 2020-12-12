@@ -10,6 +10,7 @@ const DisplayArticle = () => {
     const response = await getArticles.show(id);
     setArticle(response);
   };
+
   useEffect(() => {
     getSpecificArticle();
   }, [id]);
