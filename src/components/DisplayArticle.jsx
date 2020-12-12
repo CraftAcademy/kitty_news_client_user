@@ -17,11 +17,17 @@ const DisplayArticle = () => {
 
   return (
     <>
-      <Container data-cy="article-display">
-        <h2 data-cy="title">{article.title}</h2>
-        <h3 data-cy="lead">{article.lead}</h3>
-        <p data-cy="body">{article.body}</p>
-      </Container>
+      {article.id ? (
+        <Container data-cy="article-display">
+          <h2 data-cy="title">{article.title}</h2>
+          <h3 data-cy="lead">{article.lead}</h3>
+          <p data-cy="body">{article.body}</p>
+        </Container>
+      ) : (
+        <h1 data-cy="error-article">
+          Something went wrong, this article was not found
+        </h1>
+      )}
     </>
   );
 };
