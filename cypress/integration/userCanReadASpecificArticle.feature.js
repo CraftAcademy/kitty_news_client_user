@@ -24,7 +24,15 @@ describe("User can read a specific article", () => {
         cy.get("[data-cy='title']").should(
           "contain",
           "Cats are better than dogs!"
-        );
+				);
+				cy.get("[data-cy='lead']").should(
+          "contain",
+          "Have you noticed how smelly dogs are? Well that..."
+				);
+				cy.get("[data-cy='body']").should(
+          "contain",
+          "is because they don't clean them self as good as cat does. Cats are always nice smelling and very well behaved. This is no lie, it is a simple truth-fact for sure!!"
+				);
       });
     });
   });
