@@ -1,24 +1,37 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { Menu, Segment } from 'semantic-ui-react'
 
 const Header = () => {
 	return (
-		<nav data-cy="navbar">
-			<div>
-				<Link data-cy="header" to="/">
+		<Segment inverted>
+			<Menu inverted secondary>
+        <Menu.Item 
+          data-cy="header-news"
+          as={Link}
+          to="/">
 					News
-				</Link>
-        <Link data-cy="header" to="/">
+				</Menu.Item>
+        <Menu.Item
+          data-cy="header-gothenburg"
+          to="/"
+          as={Link}>
 					Gothenburg
-				</Link>
-        <Link data-cy="header" to="/">
+				</Menu.Item >
+        <Menu.Item
+          data-cy="header-economy"
+          to="/"
+          as={Link}>
 					Economy
-				</Link>
-        <Link data-cy="header" to="/">
+				</Menu.Item >
+        <Menu.Item
+          data-cy="header-politics"
+          to="/"
+          as={Link}>
 					Politics
-				</Link>
-			</div>
-		</nav>
+				</Menu.Item >
+			</Menu>
+		</Segment>
 	);
 };
 
