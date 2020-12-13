@@ -6,12 +6,12 @@ import { Container } from "semantic-ui-react";
 const DisplayArticle = () => {
   const [article, setArticle] = useState({});
   const { id } = useParams();
+  useEffect(() => {
   const getSpecificArticle = async () => {
     const response = await getArticles.show(id);
     setArticle(response);
   };
 
-  useEffect(() => {
     getSpecificArticle();
   }, [id]);
 
