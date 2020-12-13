@@ -7,10 +7,10 @@ const DisplayArticle = () => {
   const [article, setArticle] = useState({});
   const { id } = useParams();
   useEffect(() => {
-  const getSpecificArticle = async () => {
-    const response = await getArticles.show(id);
-    setArticle(response);
-  };
+    const getSpecificArticle = async () => {
+      const response = await getArticles.show(id);
+      setArticle(response);
+    };
 
     getSpecificArticle();
   }, [id]);
@@ -24,9 +24,11 @@ const DisplayArticle = () => {
           <p data-cy="body">{article.body}</p>
         </Container>
       ) : (
-        <h1 data-cy="error-article">
-          Something went wrong, this article was not found
-        </h1>
+        <Container data-cy="error-article">
+          <h1 >
+            Something went wrong, this article was not found
+          </h1>
+        </Container>
       )}
     </>
   );

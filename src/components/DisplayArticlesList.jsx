@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import getArticles from "../modules/getArticles";
 import ArticleCard from "./ArticleCard";
-import { Card } from "semantic-ui-react";
+import { Card, Container } from "semantic-ui-react";
 
 const DisplayArticlesList = () => {
   const [articleData, setArticleData] = useState([]);
@@ -28,7 +28,9 @@ const DisplayArticlesList = () => {
       {articleData.length ? (
         <ul data-cy="article-index">{articleIndex}</ul>
       ) : (
-        <h1 data-cy="empty-index">Sorry, there's nothing to see here yet!</h1>
+        <Container data-cy="empty-index">
+          <h1>Sorry, there's nothing to see here yet!</h1>
+        </Container>
       )}
     </>
   );
