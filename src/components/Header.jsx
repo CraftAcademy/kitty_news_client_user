@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
 	return (
-		<nav id="navbar">
+		<nav data-cy="navbar">
 			<div>
-				<Link id="header" to="/">
+				<Link data-cy="header" to="/">
 					News
 				</Link>
-        <Link id="header" to="/">
+        <Link data-cy="header" to="/">
 					Gothenburg
 				</Link>
-        <Link id="header" to="/">
+        <Link data-cy="header" to="/">
 					Economy
 				</Link>
-        <Link id="header" to="/">
+        <Link data-cy="header" to="/">
 					Politics
 				</Link>
 			</div>
