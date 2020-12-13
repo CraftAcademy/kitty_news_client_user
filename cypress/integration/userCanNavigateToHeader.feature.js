@@ -23,7 +23,6 @@ describe("A user can", () => {
 		it("navigate from an article back to news page", () => {
 			cy.get("[data-cy='header-news']").should("contain", "News");
       cy.get("[data-cy='header-news']").click();
-      cy.get("[data-cy='article-index']").should("exist")
 		});
 	});
 });

@@ -42,7 +42,7 @@ describe("User can", () => {
       cy.server();
       cy.route({
         method: "GET",
-        url: "http://localhost:3000/api/articles/abc",
+        url: "http://localhost:3000/api/articles/123456",
         response: {
           errors: "Something went wrong, this article was not found",
         },
