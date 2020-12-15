@@ -1,45 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { getArticles } from '../modules/getArticles'
-import { Item } from 'semantic-ui-react'
+import { getArticles } from "../modules/getArticles";
+import ArticleCard from "./ArticleCard";
+import { Card, Container } from "semantic-ui-react";
 
 const DisplayArticlesList = () => {
   const [articleData, setArticleData] = useState([]);
   const getArticleData = async () => {
-    let response = await getArticles();
+    let response = await getArticles.index();
     setArticleData(response);
   };
 
   useEffect(() => {
     getArticleData();
-  }, [])
+  }, []);
 
-  let articleIndex = articleData.map((article) => {
-    return (
-      <>
-        <Item.Group>
-          <Item key={article.id}>
-            <Item.Content>
-              <Item.Header >
-                {article.title}
-              </Item.Header>
-              <Item.Meta>
-                {article.lead}
-              </Item.Meta>
-            </Item.Content>
-          </Item>
-        </Item.Group>
-      </>
-    );
-  });
+  let articleIndex;
+  articleIndex = (
+    <Card.Group itemsPerRow={5}>
+      {articleData.map((article) => {
+        return <ArticleCard article={{ ...article }} />;
+      })}
+    </Card.Group>
+  );
+
   return (
     <>
-    {articleData.length ?
-      <ul data-cy="article-index">{articleIndex}</ul>
-      :
-      <h1 data-cy="empty-index">
-        Sorry, there's nothing to see here yet!
-      </h1>
-    }
+      {articleData.length ? (
+        <ul data-cy="article-index">{articleIndex}</ul>
+      ) : (
+        <Container data-cy="empty-index">
+          <h1>Sorry, there's nothing to see here yet!</h1>
+        </Container>
+      )}
     </>
   );
 };
