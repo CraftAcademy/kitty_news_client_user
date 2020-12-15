@@ -7,8 +7,12 @@ const getArticles = {
   },
 
   async show(articleId) {
-    let result = await axios.get(`/articles/${articleId}`);
-    return result.data.article;
+    try {
+      let response = await axios.get(`/articles/${articleId}`);
+      return response.data.article;
+    } catch (error) {
+      return error.response.data.message;
+    }
   },
 };
 

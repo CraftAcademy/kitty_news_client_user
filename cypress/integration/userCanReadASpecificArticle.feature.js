@@ -19,7 +19,7 @@ describe("User can", () => {
       cy.visit("/");
       cy.get("[data-cy='article-1']").click();
     });
-    it("read a specific article", () => {
+    xit("read a specific article", () => {
       cy.get("[data-cy='article-display']").within(() => {
         cy.get("[data-cy='title']").should(
           "contain",
@@ -42,14 +42,14 @@ describe("User can", () => {
       cy.server();
       cy.route({
         method: "GET",
-        url: "http://localhost:3000/api/articles/123456",
+        url: "http://localhost:3000/api/articles/3",
         response: {
-          errors: "Something went wrong, this article was not found",
+          message: "Something went wrong, this article was not found",
         },
         status: "404",
       });
       cy.visit("/");
-      cy.get("[data-cy='article-1']").click();
+      cy.get("[data-cy='article-3']").click();
     });
     it("and is presented with an error  message ", () => {
       cy.get("[data-cy='title']").should("not.exist");
