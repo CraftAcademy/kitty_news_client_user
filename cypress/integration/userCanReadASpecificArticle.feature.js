@@ -19,7 +19,7 @@ describe("User can", () => {
       cy.visit("/");
       cy.get("[data-cy='article-1']").click();
     });
-    xit("read a specific article", () => {
+    it("read a specific article", () => {
       cy.get("[data-cy='article-display']").within(() => {
         cy.get("[data-cy='title']").should(
           "contain",
