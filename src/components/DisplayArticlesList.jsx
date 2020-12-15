@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import getArticles from "../modules/getArticles";
+import { getArticles } from "../modules/getArticles";
 import ArticleCard from "./ArticleCard";
 import { Card, Container } from "semantic-ui-react";
 

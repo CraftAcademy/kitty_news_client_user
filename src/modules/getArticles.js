@@ -16,4 +16,4 @@ const getArticles = {
   },
 };
 
-export default getArticles;
+export default { getArticles };

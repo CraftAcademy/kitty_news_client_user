@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import getArticles from "../modules/getArticles";
+import { getArticles } from "../modules/getArticles";
 import { Container } from "semantic-ui-react";
 
 const DisplayArticle = () => {
