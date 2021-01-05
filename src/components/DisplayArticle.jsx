@@ -1,33 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArticles } from "../modules/getArticles";
 import { Container } from "semantic-ui-react";
+import { useDispatch, useSelector } from "react-redux";
 
 const DisplayArticle = () => {
-  const [article, setArticle] = useState();
-  const [message, setMessage] = useState();
+  const dispatch = useDispatch();
+  const viewArticle = useSelector((state) => state.specificArticle);
+  const errorMessage = useSelector((state) => state.errorMessage);
   const { id } = useParams();
-  useEffect(() => {
-    const getSpecificArticle = async () => {
-      const response = await getArticles.show(id);
-      response.id ? setArticle(response) : setMessage(response);
-    };
 
-    getSpecificArticle();
+  useEffect(() => {
+    getArticles.show(id, dispatch);
   }, [id]);
 
   return (
     <>
-      {article && (
+      {viewArticle && (
         <Container data-cy="article-display">
-          <h2 data-cy="title">{article.title}</h2>
-          <h3 data-cy="lead">{article.lead}</h3>
-          <p data-cy="body">{article.body}</p>
+          <h2 data-cy="title">{viewArticle.title}</h2>
+          <h3 data-cy="lead">{viewArticle.lead}</h3>
+          <p data-cy="body">{viewArticle.body}</p>
         </Container>
       )}
-      {message && (
+      {errorMessage && (
         <Container data-cy="error-article">
-          <h1>{message}</h1>
+          <h1>{errorMessage}</h1>
         </Container>
       )}
     </>

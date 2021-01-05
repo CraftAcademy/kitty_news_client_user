@@ -1,17 +1,17 @@
 import axios from "axios";
 
 const getArticles = {
-  async index() {
+  async index(dispatch) {
     let result = await axios.get("/articles");
-    return result.data.articles;
+    dispatch({type: "SET_NEWS_FEED", payload: result.data.articles})
   },
 
-  async show(articleId) {
+  async show(articleId, dispatch) {
     try {
       let response = await axios.get(`/articles/${articleId}`);
-      return response.data.article;
+      dispatch({ type: "VIEW_ARTICLE", payload: response.data.article });
     } catch (error) {
-      return error.response.data.message;
+      dispatch({ type: "ERROR_MESSAGE", payload: error.response.data.message });
     }
   },
 };

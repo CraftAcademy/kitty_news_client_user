@@ -5,8 +5,20 @@ const rootReducer = (state = initialState, action) => {
     case "SET_NEWS_FEED":
       return {
         ...state,
-        newsFeed: action.payload
-      }
+        newsFeed: action.payload,
+      };
+
+    case "VIEW_ARTICLE":
+      return {
+        ...state,
+        specificArticle: action.payload,
+      };
+
+    case "ERROR_MESSAGE":
+      return {
+        ...state,
+        errorMessage: action.payload,
+      };
     default:
       return state;
   }

@@ -2,18 +2,14 @@ import React, { useEffect } from "react";
 import { getArticles } from "../modules/getArticles";
 import ArticleCard from "./ArticleCard";
 import { Card, Container } from "semantic-ui-react";
-import {useDispatch, useSelector} from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
 
 const DisplayArticlesList = () => {
-  const dispatch = useDispatch()
-  const articleList = useSelector((state)=> state.newsFeed)
-  const getArticleData = async () => {
-    let articleList = await getArticles.index();
-    dispatch({type: "SET_NEWS_FEED", payload: articleList})
-  };
+  const dispatch = useDispatch();
+  const articleList = useSelector((state) => state.newsFeed);
 
   useEffect(() => {
-    getArticleData();
+    getArticles.index(dispatch);
   }, []);
 
   let articleIndex;
