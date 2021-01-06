@@ -6,8 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const DisplayArticle = () => {
   const dispatch = useDispatch();
-  const viewArticle = useSelector(state => state.specificArticle);
-  const errorMessage = useSelector(state => state.errorMessage);
+  const { specificArticle, errorMessage } = useSelector(state => state)
   const { id } = useParams();
 
   useEffect(() => {
@@ -16,11 +15,11 @@ const DisplayArticle = () => {
 
   return (
     <>
-      {viewArticle && (
+      {specificArticle && (
         <Container data-cy="article-display">
-          <h2 data-cy="title">{viewArticle.title}</h2>
-          <h3 data-cy="lead">{viewArticle.lead}</h3>
-          <p data-cy="body">{viewArticle.body}</p>
+          <h2 data-cy="title">{specificArticle.title}</h2>
+          <h3 data-cy="lead">{specificArticle.lead}</h3>
+          <p data-cy="body">{specificArticle.body}</p>
         </Container>
       )}
       {errorMessage && (
