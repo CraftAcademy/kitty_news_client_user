@@ -1,23 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { getArticles } from "../modules/getArticles";
 import ArticleCard from "./ArticleCard";
 import { Card, Container } from "semantic-ui-react";
+import { useDispatch, useSelector } from "react-redux";
 
 const DisplayArticlesList = () => {
-  const [articleData, setArticleData] = useState([]);
-  const getArticleData = async () => {
-    let response = await getArticles.index();
-    setArticleData(response);
-  };
+  const dispatch = useDispatch();
+  const { newsFeed } = useSelector(state => state);
 
   useEffect(() => {
-    getArticleData();
-  }, []);
+    getArticles.index(dispatch);
+  }, [dispatch]);
 
   let articleIndex;
   articleIndex = (
     <Card.Group itemsPerRow={5}>
-      {articleData.map((article) => {
+      {newsFeed.map((article) => {
         return <ArticleCard article={{ ...article }} />;
       })}
     </Card.Group>
@@ -25,7 +23,7 @@ const DisplayArticlesList = () => {
 
   return (
     <>
-      {articleData.length ? (
+      {newsFeed.length ? (
         <ul data-cy="article-index">{articleIndex}</ul>
       ) : (
         <Container data-cy="empty-index">
