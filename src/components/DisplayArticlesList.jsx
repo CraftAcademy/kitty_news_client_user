@@ -6,16 +6,16 @@ import { useDispatch, useSelector } from "react-redux";
 
 const DisplayArticlesList = () => {
   const dispatch = useDispatch();
-  const articleList = useSelector(state => state.newsFeed);
+  const { newsFeed } = useSelector(state => state);
 
   useEffect(() => {
     getArticles.index(dispatch);
-  }, []);
+  }, [dispatch]);
 
   let articleIndex;
   articleIndex = (
     <Card.Group itemsPerRow={5}>
-      {articleList.map((article) => {
+      {newsFeed.map((article) => {
         return <ArticleCard article={{ ...article }} />;
       })}
     </Card.Group>
@@ -23,7 +23,7 @@ const DisplayArticlesList = () => {
 
   return (
     <>
-      {articleList.length ? (
+      {newsFeed.length ? (
         <ul data-cy="article-index">{articleIndex}</ul>
       ) : (
         <Container data-cy="empty-index">

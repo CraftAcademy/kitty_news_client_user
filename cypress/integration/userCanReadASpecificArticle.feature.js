@@ -52,7 +52,6 @@ describe("User can", () => {
       cy.get("[data-cy='article-3']").click();
     });
     it("and is presented with an error  message ", () => {
-      cy.get("[data-cy='title']").should("not.exist");
       cy.get("[data-cy='error-article']").should(
         "contain",
         "Something went wrong, this article was not found"
