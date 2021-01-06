@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 const DisplayArticle = () => {
   const dispatch = useDispatch();
-  const viewArticle = useSelector((state) => state.specificArticle);
-  const errorMessage = useSelector((state) => state.errorMessage);
+  const viewArticle = useSelector(state => state.specificArticle);
+  const errorMessage = useSelector(state => state.errorMessage);
   const { id } = useParams();
 
   useEffect(() => {

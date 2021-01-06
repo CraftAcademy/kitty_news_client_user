@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const DisplayArticlesList = () => {
   const dispatch = useDispatch();
-  const articleList = useSelector((state) => state.newsFeed);
+  const articleList = useSelector(state => state.newsFeed);
 
   useEffect(() => {
     getArticles.index(dispatch);
