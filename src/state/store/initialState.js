@@ -1,9 +1,6 @@
 const initialState = {
-	newsFeed: [],
-	specificArticle: {}
+  newsFeed: [],
+  specificArticle: {},
 };
-
-
-
 
 export default initialState;
