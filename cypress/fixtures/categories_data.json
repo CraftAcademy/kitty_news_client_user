@@ -1,0 +1,26 @@
+{
+  "category": {
+    "id": 1,
+    "label": "sports",
+    "articles": [
+      {
+        "id": 3,
+        "title": "Sport 1",
+        "lead": "MyLead 1",
+        "created": "2021-01-01"
+      },
+      {
+        "id": 4,
+        "title": "Sport 2",
+        "lead": "MyLead 2",
+        "created": "2021-01-02"
+      },
+      {
+        "id": 5,
+        "title": "Sport 3",
+        "lead": "MyLead 3",
+        "created": "2021-01-03"
+      }
+    ]
+  }
+}
