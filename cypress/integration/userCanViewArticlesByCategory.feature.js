@@ -1,5 +1,4 @@
-describe("A user can,", () => {
-  describe("successfully,", () => {
+describe("A user can successfully,,", () => {
     beforeEach(() => {
       cy.server();
       cy.route({
@@ -50,5 +49,5 @@ describe("A user can,", () => {
         });
       });
     });
-  });
+  
 

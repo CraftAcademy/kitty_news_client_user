@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { Menu } from "semantic-ui-react";
 import { getArticles } from "../modules/getArticles";
