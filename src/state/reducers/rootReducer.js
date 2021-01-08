@@ -13,6 +13,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         specificArticle: action.payload,
+        newsFeed: []
       };
 
     case "ERROR_MESSAGE":

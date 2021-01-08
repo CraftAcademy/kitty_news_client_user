@@ -13,7 +13,7 @@ const Header = () => {
         data-cy="header-news" 
         as={NavLink} 
         to="/"
-        // onClick={() => getArticles.index(dispatch)}
+        onClick={() => getArticles.index(dispatch)}
         >
           News
         </Menu.Item>
