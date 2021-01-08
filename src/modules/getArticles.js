@@ -16,6 +16,7 @@ const getArticles = {
   },
 
   async index_by_category(categoryId, dispatch) {
+    debugger
     const result = await axios.get(`/categories/${categoryId}`);
     dispatch({ type: "SET_NEWS_FEED", payload: result.data.category.articles });
   },

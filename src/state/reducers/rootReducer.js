@@ -6,6 +6,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         newsFeed: action.payload,
+        specificArticle: {}
       };
 
     case "VIEW_ARTICLE":

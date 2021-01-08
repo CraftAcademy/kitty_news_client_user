@@ -5,6 +5,7 @@ import { Card, Container } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 
 const DisplayArticlesList = () => {
+  debugger
   const dispatch = useDispatch();
   const { newsFeed } = useSelector(state => state);
 
