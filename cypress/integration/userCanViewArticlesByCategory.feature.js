@@ -26,7 +26,7 @@ describe("A user can successfully,,", () => {
       cy.contains("How Aby’s speedy approach could help golf’s pace of play");
     });
   });
-  it.only("and click on a specific article", () => {
+  it("and click on a specific article", () => {
     cy.route({
       method: "GET",
       url: "http://localhost:3000/api/articles/3",
