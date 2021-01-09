@@ -6,7 +6,10 @@ const getArticles = {
       const result = await axios.get("/articles");
       dispatch({ type: "SET_NEWS_FEED", payload: result.data.articles });
     } catch (error) {
-      dispatch({ type: "ERROR_MESSAGE", payload: error.response.data.message });
+      dispatch({
+        type: "ERROR_MESSAGE",
+        payload: "MEOW, something went wrong!",
+      });
     }
   },
 
@@ -27,7 +30,10 @@ const getArticles = {
         payload: result.data.category.articles,
       });
     } catch (error) {
-      dispatch({ type: "ERROR_MESSAGE", payload: error.response.data.message });
+      dispatch({
+        type: "ERROR_MESSAGE",
+        payload: "MEOW, something went wrong!",
+      });
     }
   },
 };
