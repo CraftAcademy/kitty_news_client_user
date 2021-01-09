@@ -5,5 +5,6 @@
   "news": "News",
   "culture": "Culture",
   "empty_index_message": "Sorry, there's nothing to see here yet!",
-  "footer": "Made with React"
+  "footer": "Made with React",
+  "home_link": "Home"
 }
