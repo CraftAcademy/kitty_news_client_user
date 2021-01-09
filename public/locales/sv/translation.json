@@ -4,6 +4,7 @@
   "self_care": "Hälsa",
   "news": "Nyheter",
   "culture": "Kultur",
-  "empty_index_message": "Det finns tyvärr inga nyheter. Kontrolera din internet uppkoppling",
-  "footer": "Skapad med React"
+  "empty_index_message": "Det finns tyvärr inga nyheter. Kontrollera din internet uppkoppling",
+  "footer": "Skapad med React",
+  "home_link": "Hem"
 }
