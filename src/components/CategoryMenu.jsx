@@ -3,8 +3,10 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Menu } from "semantic-ui-react";
 import { getArticles } from "../modules/getArticles";
+import {useTranslation} from "react-i18next"
 
 const CategoryMenu = () => {
+  const {t} = useTranslation()
   const dispatch = useDispatch();
 
   return (
@@ -16,6 +18,7 @@ const CategoryMenu = () => {
         as={Link}
         to="/"
       >
+        {t('global_politics')}
         Global Politics
       </Menu.Item>
       <Menu.Item
