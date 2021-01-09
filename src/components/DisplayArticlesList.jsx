@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const DisplayArticlesList = () => {
   const dispatch = useDispatch();
-  const { newsFeed } = useSelector((state) => state);
+  const { newsFeed } = useSelector(state => state);
 
   useEffect(() => {
     getArticles.index(dispatch);
@@ -26,10 +26,10 @@ const DisplayArticlesList = () => {
       {newsFeed.length ? (
         <ul data-cy="article-index">{articleIndex}</ul>
       ) : (
-        <Container data-cy="empty-index">
-          <h1>Sorry, there's nothing to see here yet!</h1>
-        </Container>
-      )}
+          <Container data-cy="empty-index">
+            <h1>Sorry, there's nothing to see here yet!</h1>
+          </Container>
+        )}
     </>
   );
 };
