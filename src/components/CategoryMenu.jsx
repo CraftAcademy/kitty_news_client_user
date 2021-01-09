@@ -19,7 +19,6 @@ const CategoryMenu = () => {
         to="/"
       >
         {t('global_politics')}
-        Global Politics
       </Menu.Item>
       <Menu.Item
         name="sports"
