@@ -7,17 +7,17 @@ import Footer from "./components/Footer";
 import CategoryMenu from "./components/CategoryMenu";
 
 const App = () => {
-	return (
-		<>
-			<Header />
-			<CategoryMenu />
-			<Switch>
-				<Route exact path="/" component={DisplayArticlesList}></Route>
-				<Route exact path="/articles/:id" component={DisplayArticle}></Route>
-			</Switch>
-			<Footer />
-		</>
-	);
+  return (
+    <>
+      <Header />
+      <CategoryMenu />
+      <Switch>
+        <Route exact path="/" component={DisplayArticlesList}></Route>
+        <Route exact path="/articles/:id" component={DisplayArticle}></Route>
+      </Switch>
+      <Footer />
+    </>
+  );
 };
 
 export default App;
