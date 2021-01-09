@@ -14,7 +14,7 @@ const CategoryMenu = () => {
 				data-cy="category-global-politics"
 				onClick={() => getArticles.index_by_category(1, dispatch)}
 				as={Link}
-				to="/categories/global_politics"
+				to="/"
 			>
 				Global Politics
 			</Menu.Item>
@@ -23,7 +23,7 @@ const CategoryMenu = () => {
 				data-cy="category-sports"
 				onClick={() => getArticles.index_by_category(2, dispatch)}
 				as={Link}
-				to="/categories/sports"
+				to="/"
 			>
 				Sports
 			</Menu.Item>
@@ -32,7 +32,7 @@ const CategoryMenu = () => {
 				data-cy="category-self-care"
 				onClick={() => getArticles.index_by_category(3, dispatch)}
 				as={Link}
-				to="/categories/self_care"
+				to="/"
 			>
 				Self Care
 			</Menu.Item>
@@ -41,7 +41,7 @@ const CategoryMenu = () => {
 				data-cy="category-news"
 				onClick={() => getArticles.index_by_category(4, dispatch)}
 				as={Link}
-				to="/categories/news"
+				to="/"
 			>
 				News
 			</Menu.Item>
@@ -50,7 +50,7 @@ const CategoryMenu = () => {
 				data-cy="category-culture"
 				onClick={() => getArticles.index_by_category(5, dispatch)}
 				as={Link}
-				to="/categories/culture"
+				to="/"
 			>
 				Culture
 			</Menu.Item>
