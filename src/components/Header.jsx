@@ -1,8 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, Segment } from "semantic-ui-react";
+import { Menu, Segment, Flag } from "semantic-ui-react";
 import { useDispatch } from "react-redux";
 import { getArticles } from "../modules/getArticles";
+import i18n from "i18n"
+import {useTranslation} from "react-i18next"
+
+
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -17,6 +21,8 @@ const Header = () => {
         >
           News
         </Menu.Item>
+        <Flag name="gb" onClick={() => {i18n.changeLanguage("en")}}/>
+        <Flag name="se" onClick={() => {i18n.changeLanguage("sv")}}/>
       </Menu>
     </Segment>
   );

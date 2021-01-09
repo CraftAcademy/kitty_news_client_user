@@ -7,7 +7,7 @@ i18n
   .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
-  init({
+  .init({
     fallbackLng: ["en"],
     whitelist: ["en", "sv"],
     debug: true,
