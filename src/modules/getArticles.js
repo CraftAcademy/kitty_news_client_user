@@ -2,8 +2,12 @@ import axios from "axios";
 
 const getArticles = {
   async index(dispatch) {
-    const result = await axios.get("/articles");
-    dispatch({ type: "SET_NEWS_FEED", payload: result.data.articles });
+    try {
+      const result = await axios.get("/articles");
+      dispatch({ type: "SET_NEWS_FEED", payload: result.data.articles });
+    } catch (error) {
+      dispatch({ type: "ERROR_MESSAGE", payload: error.response.data.message });
+    }
   },
 
   async show(articleId, dispatch) {
@@ -16,8 +20,15 @@ const getArticles = {
   },
 
   async index_by_category(categoryId, dispatch) {
-    const result = await axios.get(`/categories/${categoryId}`);
-    dispatch({ type: "SET_NEWS_FEED", payload: result.data.category.articles });
+    try {
+      const result = await axios.get(`/categories/${categoryId}`);
+      dispatch({
+        type: "SET_NEWS_FEED",
+        payload: result.data.category.articles,
+      });
+    } catch (error) {
+      dispatch({ type: "ERROR_MESSAGE", payload: error.response.data.message });
+    }
   },
 };
 
