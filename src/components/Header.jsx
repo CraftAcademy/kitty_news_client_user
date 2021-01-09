@@ -20,18 +20,21 @@ const Header = () => {
         </Menu.Item>
         <Flag
           name="gb"
+          data-cy="english-icon"
           onClick={() => {
             i18n.changeLanguage("en");
           }}
         />
         <Flag
           name="se"
+          data-cy="swedish-icon"
           onClick={() => {
             i18n.changeLanguage("sv");
           }}
         />
         <Icon
           name="paw"
+          data-cy="cat-icon"
           onClick={() => {
             i18n.changeLanguage("cat");
           }}
