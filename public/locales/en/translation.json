@@ -1,3 +1,9 @@
 {
-  "global_politics": "Global Politics"
+  "global_politics": "Global Politics",
+  "sports": "Sports",
+  "self_care": "Self Care",
+  "news": "News",
+  "culture": "Culture",
+  "empty_index_message": "Sorry, there's nothing to see here yet!",
+  "footer": "Made with React"
 }

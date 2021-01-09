@@ -1,10 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer>
       <p id="footer" data-cy="footer">
-        Made with React {React.version}
+        {t("footer")} {React.version}
       </p>
     </footer>
   );

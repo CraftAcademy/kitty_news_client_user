@@ -3,10 +3,10 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Menu } from "semantic-ui-react";
 import { getArticles } from "../modules/getArticles";
-import {useTranslation} from "react-i18next"
+import { useTranslation } from "react-i18next";
 
 const CategoryMenu = () => {
-  const {t} = useTranslation()
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   return (
@@ -18,7 +18,7 @@ const CategoryMenu = () => {
         as={Link}
         to="/"
       >
-        {t('global_politics')}
+        {t("global_politics")}
       </Menu.Item>
       <Menu.Item
         name="sports"
@@ -27,7 +27,7 @@ const CategoryMenu = () => {
         as={Link}
         to="/"
       >
-        Sports
+        {t("sports")}
       </Menu.Item>
       <Menu.Item
         name="self_care"
@@ -36,7 +36,7 @@ const CategoryMenu = () => {
         as={Link}
         to="/"
       >
-        Self Care
+        {t("self_care")}
       </Menu.Item>
       <Menu.Item
         name="news"
@@ -45,7 +45,7 @@ const CategoryMenu = () => {
         as={Link}
         to="/"
       >
-        News
+        {t("news")}
       </Menu.Item>
       <Menu.Item
         name="culture"
@@ -54,7 +54,7 @@ const CategoryMenu = () => {
         as={Link}
         to="/"
       >
-        Culture
+        {t("culture")}
       </Menu.Item>
     </Menu>
   );
