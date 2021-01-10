@@ -9,7 +9,7 @@ const Header = () => {
     <Segment
       attached="top"
       style={{
-        width: "2000px",
+        width: "100%",
         height: "80px",
         backgroundImage: `url("images/KittyNews5.5.5.png")`,
         backgroundRepeat: "no-repeat",
