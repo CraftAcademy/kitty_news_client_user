@@ -6,13 +6,12 @@ import axios from "axios";
 import "semantic-ui-css/semantic.min.css";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
-import configureStore from "./state/store/configureStore";
+import store from "./state/store/configureStore";
 import { Provider } from "react-redux";
 import "./i18n";
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
-const store = configureStore();
 window.store = store;
 
 ReactDOM.render(

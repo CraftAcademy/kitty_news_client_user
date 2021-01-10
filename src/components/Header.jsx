@@ -3,12 +3,11 @@ import { NavLink } from "react-router-dom";
 import { Menu, Segment, Flag, Icon } from "semantic-ui-react";
 import { useDispatch } from "react-redux";
 import { getArticles } from "../modules/getArticles";
-import i18n from "../i18n";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <Segment inverted>
