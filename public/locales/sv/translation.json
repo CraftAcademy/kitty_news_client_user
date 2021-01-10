@@ -1,0 +1,10 @@
+{
+  "global_politics": "Omvärlden",
+  "sports": "Sport",
+  "self_care": "Hälsa",
+  "news": "Nyheter",
+  "culture": "Kultur",
+  "empty_index_message": "Det finns tyvärr inga nyheter. Kontrollera din internet uppkoppling",
+  "footer": "Skapad med React",
+  "home_link": "Hem"
+}

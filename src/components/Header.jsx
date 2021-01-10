@@ -1,11 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, Segment } from "semantic-ui-react";
+import { Menu, Segment, Flag, Icon } from "semantic-ui-react";
 import { useDispatch } from "react-redux";
 import { getArticles } from "../modules/getArticles";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
+
   return (
     <Segment inverted>
       <Menu inverted secondary>
@@ -15,8 +18,29 @@ const Header = () => {
           to="/"
           onClick={() => getArticles.index(dispatch)}
         >
-          News
+          {t("home_link")}
         </Menu.Item>
+        <Flag
+          name="gb"
+          data-cy="english-icon"
+          onClick={() => {
+            i18n.changeLanguage("en");
+          }}
+        />
+        <Flag
+          name="se"
+          data-cy="swedish-icon"
+          onClick={() => {
+            i18n.changeLanguage("sv");
+          }}
+        />
+        <Icon
+          name="paw"
+          data-cy="cat-icon"
+          onClick={() => {
+            i18n.changeLanguage("cat");
+          }}
+        />
       </Menu>
     </Segment>
   );
