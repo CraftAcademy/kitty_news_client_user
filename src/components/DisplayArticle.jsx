@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArticles } from "../modules/getArticles";
-import { Container } from "semantic-ui-react";
+import { Container, Grid } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 
 const DisplayArticle = () => {
@@ -15,11 +15,14 @@ const DisplayArticle = () => {
 
   return (
     <>
-      <Container data-cy="article-display">
-        <h2 data-cy="title">{specificArticle.title}</h2>
-        <h3 data-cy="lead">{specificArticle.lead}</h3>
-        <p data-cy="body">{specificArticle.body}</p>
-      </Container>
+      <Grid data-cy="article-display" centered>
+        <Grid.Column width={13}>
+          <h2 data-cy="title">{specificArticle.title}</h2>
+          <h3 data-cy="lead">{specificArticle.lead}</h3>
+          <p data-cy="body">{specificArticle.body}</p>
+        </Grid.Column>
+      </Grid>
+
       {errorMessage && (
         <Container data-cy="error-article">
           <h1>{errorMessage}</h1>

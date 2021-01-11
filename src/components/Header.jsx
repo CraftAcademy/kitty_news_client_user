@@ -1,25 +1,20 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { Menu, Segment, Flag, Icon } from "semantic-ui-react";
-import { useDispatch } from "react-redux";
-import { getArticles } from "../modules/getArticles";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const dispatch = useDispatch();
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
-    <Segment inverted>
-      <Menu inverted secondary>
-        <Menu.Item
-          data-cy="header-news"
-          as={NavLink}
-          to="/"
-          onClick={() => getArticles.index(dispatch)}
-        >
-          {t("home_link")}
-        </Menu.Item>
+    <Segment
+      attached="top"
+      style={{
+        width: "100%",
+        height: "80px",
+        backgroundImage: `url("images/KittyNews5.5.5.png")`,
+        backgroundRepeat: "no-repeat",
+      }}>
+      <Menu inverted secondary floated="right">
         <Flag
           name="gb"
           data-cy="english-icon"
@@ -36,6 +31,7 @@ const Header = () => {
         />
         <Icon
           name="paw"
+          color="yellow"
           data-cy="cat-icon"
           onClick={() => {
             i18n.changeLanguage("cat");
