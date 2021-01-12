@@ -17,9 +17,9 @@ const signUp = async (event, dispatch) => {
       payload: response.data,
     });
   } catch (error) {
-    console.log(error);
+    debugger
     dispatch({
-      type: "SET_ERROR_MESSAGE",
+      type: "ERROR_MESSAGE",
       payload: error.response.data.errors[0],
     });
   }

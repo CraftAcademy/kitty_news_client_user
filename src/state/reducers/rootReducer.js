@@ -18,7 +18,6 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         currentUser: action.payload,
-        auth: { message: "Your registration was a success!", status: true },
       };
     case "ERROR_MESSAGE":
       return {

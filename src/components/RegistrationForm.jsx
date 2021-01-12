@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { signUp } from "../modules/Authentication";
 
 const RegistrationForm = () => {
-  const currentUser = useSelector((state) => state.currentUser);
+  const errorMessage = useSelector((state) => state.errorMessage);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
@@ -62,9 +62,9 @@ const RegistrationForm = () => {
           </Form>
         </Modal.Content>
         <Modal.Description>
-          {currentUser && (
+          {errorMessage && (
             <Message data-cy="register-error-message" negative>
-              Something went wrong!
+              {errorMessage}
             </Message>
           )}
         </Modal.Description>
