@@ -1,7 +1,12 @@
 import React from "react";
 import { Segment, Form, Button, Icon } from "semantic-ui-react";
+import { useDispatch } from "react-redux";
+import { signUp } from "../modules/Authentication";
+
 
 const RegistrationForm = () => {
+  const dispatch = useDispatch();
+
   return (
     <Segment placeholder>
       <Form
