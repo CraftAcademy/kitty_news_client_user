@@ -5,11 +5,13 @@ import DisplayArticle from "./components/DisplayArticle";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CategoryMenu from "./components/CategoryMenu";
+import RegistrationForm from "./components/RegistrationForm"
 
 const App = () => {
   return (
     <>
       <Header />
+      <RegistrationForm />
       <CategoryMenu />
       <Switch>
         <Route exact path="/" component={DisplayArticlesList}></Route>
