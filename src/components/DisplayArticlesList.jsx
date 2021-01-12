@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { getArticles } from "../modules/getArticles";
 import ArticleCard from "./ArticleCard";
-import { Card, Container } from "semantic-ui-react";
+import { Item, Container } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
@@ -16,11 +16,12 @@ const DisplayArticlesList = () => {
 
   let articleIndex;
   articleIndex = (
-    <Card.Group itemsPerRow={5}>
+    <Item.Group 
+    vertical>
       {newsFeed.map((article) => {
         return <ArticleCard article={{ ...article }} />;
       })}
-    </Card.Group>
+    </Item.Group>
   );
 
   return (
