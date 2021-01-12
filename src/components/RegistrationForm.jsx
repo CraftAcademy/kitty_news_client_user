@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { Form, Button, Icon, Modal, Message } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 import { signUp } from "../modules/Authentication";
@@ -54,7 +54,6 @@ const RegistrationForm = () => {
               placeholder="Password Confirmation"
               iconPosition="left"
             />
-
             <Button data-cy="submit-btn" icon labelPosition="left">
               <Icon name="user"></Icon>
               Submit

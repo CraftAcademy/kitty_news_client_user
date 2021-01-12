@@ -10,14 +10,13 @@ const signUp = async (event, dispatch) => {
     let response = await auth.signUp({
       email: event.target.email.value,
       password: event.target.password.value,
-      password_confirmation: event.target.password_confirmation.value
+      password_confirmation: event.target.password_confirmation.value,
     });
     dispatch({
       type: "SET_CURRENT_USER",
       payload: response.data,
     });
   } catch (error) {
-    debugger
     dispatch({
       type: "ERROR_MESSAGE",
       payload: error.response.data.errors[0],

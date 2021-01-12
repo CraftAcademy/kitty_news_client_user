@@ -75,8 +75,8 @@ const CategoryMenu = () => {
           {t("culture")}
         </Menu.Item>
         <Menu.Item position="right">
-        <RegistrationForm />
-      </Menu.Item>
+          <RegistrationForm />
+        </Menu.Item>
       </Menu >
     </Segment >
   );
