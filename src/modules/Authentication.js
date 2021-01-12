@@ -7,10 +7,11 @@ const auth = new JtockAuth({
 const signUp = async (event, dispatch) => {
   try {
     event.preventDefault();
-    let response = await auth.signUp(
-      event.target.email.value,
-      event.target.password.value
-    );
+    let response = await auth.signUp({
+      email: event.target.email.value,
+      password: event.target.password.value,
+      password_confirmation: event.target.password_confirmation.value
+    });
     dispatch({
       type: "SET_CURRENT_USER",
       payload: response.data,

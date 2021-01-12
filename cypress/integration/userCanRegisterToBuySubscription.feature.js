@@ -2,6 +2,11 @@ describe('user can register to buy a subscription', () => {
   beforeEach(() => {
     cy.server();
     cy.route({
+      method: "GET",
+      url: "http://localhost:3000/api/articles",
+      response: "fixture:articles_data.json",
+    });
+    cy.route({
       method: "POST",
       url: "http://localhost:3000/api/auth",
       response: "fixture:user_can_register.json",

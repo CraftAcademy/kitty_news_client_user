@@ -35,8 +35,8 @@ const RegistrationForm = () => {
         <Form.Input
           icon="key"
           type="password"
-          label="Password"
-          name="password"
+          label="Password Confirmation"
+          name="password_confirmation"
           data-cy='input-password-confirmation'
           placeholder="Password Confirmation"
           iconPosition="left"
