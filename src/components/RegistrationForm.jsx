@@ -25,7 +25,7 @@ const RegistrationForm = () => {
         <Modal.Content>
           <Form
             data-cy="signup-form"
-            onSubmit={(event) => signUp(event, dispatch)}
+            onSubmit={(event) => signUp(event, dispatch, setOpen)}
           >
             <Form.Input
               icon="at"
