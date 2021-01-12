@@ -6,6 +6,11 @@ describe('user can register to buy a subscription', () => {
       url: "http://localhost:3000/api/auth",
       response: "fixture:user_can_register.json",
     });
+    cy.route({
+      method: "GET",
+      url: "http://localhost:3000/api/auth/validate_token**",
+      response: "fixture:user_can_register.json",
+    });
     cy.visit("/");
   });
   it("successfully", () => {
