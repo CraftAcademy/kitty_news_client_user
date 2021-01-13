@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form, Button, Icon, Modal, Message } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 import { signUp } from "../modules/Authentication";
 
 const RegistrationForm = () => {
-  const registerErrorMessage = useSelector((state) => state.registerErrorMessage);
-  const [open, setOpen] = useState(false);
+  const { registerErrorMessage, modalOpen } = useSelector(state => state);
   const dispatch = useDispatch();
 
   return (
     <>
       <Modal
         closeIcon
-        onClose={() => setOpen(false)}
-        onOpen={() => setOpen(true)}
-        open={open}
+        onClose={() => dispatch({ type: "CLOSE_MODAL" })}
+        onOpen={() => dispatch({ type: "OPEN_MODAL" })}
+        open={modalOpen}
         trigger={
           <Button data-cy="signup-button" inverted>
             Sign up!
@@ -25,7 +24,7 @@ const RegistrationForm = () => {
         <Modal.Content>
           <Form
             data-cy="signup-form"
-            onSubmit={(event) => signUp(event, dispatch, setOpen)}
+            onSubmit={(event) => signUp(event, dispatch)}
           >
             <Form.Input
               icon="at"

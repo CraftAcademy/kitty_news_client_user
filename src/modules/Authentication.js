@@ -4,7 +4,7 @@ const auth = new JtockAuth({
   host: process.env.REACT_APP_API_URL,
 });
 
-const signUp = async (event, dispatch, setOpen) => {
+const signUp = async (event, dispatch) => {
   try {
     event.preventDefault();
     let response = await auth.signUp({
@@ -16,13 +16,13 @@ const signUp = async (event, dispatch, setOpen) => {
       type: "SET_CURRENT_USER",
       payload: response.data,
     });
-    setOpen(false);
+    dispatch({ type: "CLOSE_MODAL" });
   } catch (error) {
     dispatch({
       type: "REGISTER_ERROR_MESSAGE",
       payload: error.response.data.errors.full_messages[0],
     });
-    setOpen(true);
+    dispatch({ type: "OPEN_MODAL" });
   }
 };
 

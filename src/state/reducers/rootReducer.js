@@ -8,7 +8,6 @@ const rootReducer = (state = initialState, action) => {
         newsFeed: action.payload,
         specificArticle: {},
       };
-
     case "VIEW_ARTICLE":
       return {
         ...state,
@@ -28,6 +27,16 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         registerErrorMessage: action.payload,
+      };
+    case "OPEN_MODAL":
+      return {
+        ...state,
+        modalOpen: true,
+      };
+    case "CLOSE_MODAL":
+      return {
+        ...state,
+        modalOpen: false,
       };
     default:
       return state;

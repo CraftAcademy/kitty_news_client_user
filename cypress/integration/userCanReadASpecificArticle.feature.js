@@ -94,6 +94,7 @@ describe("User can", () => {
       );
     });
   });
+
   describe("NOT read article when they're not registered", () => {
     it("displays registration form", () => {
       cy.visit("/");
