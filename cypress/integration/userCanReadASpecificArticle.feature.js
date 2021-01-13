@@ -56,7 +56,7 @@ describe("User can", () => {
     });
   });
 
-  context("not see an article if improper params are provided", () => {
+  describe("not see an article if improper params are provided", () => {
     beforeEach(() => {
       cy.server();
       cy.route({
@@ -92,6 +92,13 @@ describe("User can", () => {
         "contain",
         "Something went wrong, this article was not found"
       );
+    });
+  });
+  describe("NOT read article when they're not registered", () => {
+    it("displays registration form", () => {
+      cy.visit("/");
+      cy.get("[data-cy='article-3']").click();
+      cy.get("[data-cy='signup-form']").should("be.visible");
     });
   });
 });
