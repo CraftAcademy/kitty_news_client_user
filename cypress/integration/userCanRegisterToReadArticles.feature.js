@@ -7,6 +7,7 @@ describe("user can register", () => {
       response: "fixture:articles_data.json",
     });
   });
+
   describe("successfully", () => {
     beforeEach(() => {
       cy.route({
@@ -31,7 +32,11 @@ describe("user can register", () => {
         cy.get("[data-cy='signup']").should("not.exist");
       });
     });
+    it("hides the sign up button", () => {
+      cy.get("[data-cy='signup-button']").should("not.be.visible");
+    });
   });
+
   describe("unsuccessfully", () => {
     it("with invalid credentials", () => {
       cy.route({
