@@ -11,8 +11,8 @@ const RegistrationForm = () => {
     <>
       <Modal
         closeIcon
-        onClose={() => dispatch({ type: "CLOSE_MODAL" })}
-        onOpen={() => dispatch({ type: "OPEN_MODAL" })}
+        onClose={() => dispatch({ type: "CLOSE_REGISTRATION_FORM" })}
+        onOpen={() => dispatch({ type: "OPEN_REGISTRATION_FORM" })}
         open={modalOpen}
         trigger={
           <Button data-cy="signup-button" inverted>

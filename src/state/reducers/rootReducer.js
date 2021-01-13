@@ -28,12 +28,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         registerErrorMessage: action.payload,
       };
-    case "OPEN_MODAL":
+    case "OPEN_REGISTRATION_FORM":
       return {
         ...state,
         modalOpen: true,
       };
-    case "CLOSE_MODAL":
+    case "CLOSE_REGISTRATION_FORM":
       return {
         ...state,
         modalOpen: false,

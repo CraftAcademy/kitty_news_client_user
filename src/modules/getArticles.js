@@ -25,7 +25,7 @@ const getArticles = {
         });
       }
     } else {
-      dispatch({ type: "OPEN_MODAL" });
+      dispatch({ type: "OPEN_REGISTRATION_FORM" });
     }
   },
 

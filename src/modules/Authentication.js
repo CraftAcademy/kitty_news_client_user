@@ -16,13 +16,13 @@ const signUp = async (event, dispatch) => {
       type: "SET_CURRENT_USER",
       payload: response.data,
     });
-    dispatch({ type: "CLOSE_MODAL" });
+    dispatch({ type: "CLOSE_REGISTRATION_FORM" });
   } catch (error) {
     dispatch({
       type: "REGISTER_ERROR_MESSAGE",
       payload: error.response.data.errors.full_messages[0],
     });
-    dispatch({ type: "OPEN_MODAL" });
+    dispatch({ type: "OPEN_REGISTRATION_FORM" });
   }
 };
 
