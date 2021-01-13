@@ -16,7 +16,7 @@ const RegistrationForm = () => {
         onOpen={() => setOpen(true)}
         open={open}
         trigger={
-          <Button data-cy="signup-button" basic color="teal">
+          <Button data-cy="signup-button" inverted>
             Sign up!
           </Button>
         }
