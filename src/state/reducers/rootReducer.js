@@ -24,6 +24,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         errorMessage: action.payload,
       };
+    case "REGISTER_ERROR_MESSAGE":
+      return {
+        ...state,
+        registerErrorMessage: action.payload,
+      };
     default:
       return state;
   }

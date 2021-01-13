@@ -1,4 +1,5 @@
 import axios from "axios";
+import Registration from "../components/RegistrationForm"
 
 const getArticles = {
   async index(dispatch) {
@@ -13,13 +14,18 @@ const getArticles = {
     }
   },
 
-  async show(articleId, dispatch) {
-    try {
+  async show(articleId, dispatch, currentUser) {
+    if (currentUser) {
+          try {
       const response = await axios.get(`/articles/${articleId}`);
       dispatch({ type: "VIEW_ARTICLE", payload: response.data.article });
     } catch (error) {
       dispatch({ type: "ERROR_MESSAGE", payload: error.response.data.message });
     }
+    } else {
+      <Registration/>
+    }
+
   },
 
   async index_by_category(categoryId, dispatch) {

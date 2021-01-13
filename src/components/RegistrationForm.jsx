@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { signUp } from "../modules/Authentication";
 
 const RegistrationForm = () => {
-  const errorMessage = useSelector((state) => state.errorMessage);
+  const registerErrorMessage = useSelector((state) => state.registerErrorMessage);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
@@ -61,9 +61,9 @@ const RegistrationForm = () => {
           </Form>
         </Modal.Content>
         <Modal.Description>
-          {errorMessage && (
+          {registerErrorMessage && (
             <Message data-cy="register-error-message" negative>
-              {errorMessage}
+              {registerErrorMessage}
             </Message>
           )}
         </Modal.Description>
