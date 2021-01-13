@@ -11,7 +11,7 @@ const DisplayArticle = () => {
 
   useEffect(() => {
     getArticles.show(id, dispatch, currentUser);
-  }, [id, dispatch]);
+  }, [id, dispatch, currentUser]);
 
   return (
     <>
