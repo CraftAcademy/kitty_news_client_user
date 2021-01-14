@@ -6,12 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 const DisplayArticle = () => {
   const dispatch = useDispatch();
-  const { specificArticle, errorMessage } = useSelector(state => state);
+  const { specificArticle, errorMessage, currentUser } = useSelector(state => state);
   const { id } = useParams();
 
   useEffect(() => {
-    getArticles.show(id, dispatch);
-  }, [id, dispatch]);
+    getArticles.show(id, dispatch, currentUser);
+  }, [id, dispatch, currentUser]);
 
   return (
     <>

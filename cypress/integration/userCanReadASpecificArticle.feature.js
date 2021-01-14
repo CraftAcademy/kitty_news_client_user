@@ -8,7 +8,7 @@ describe("User can", () => {
     });
   });
 
-  context("successfully", () => {
+  describe("successfully", () => {
     beforeEach(() => {
       cy.server();
       cy.route({
@@ -16,8 +16,27 @@ describe("User can", () => {
         url: "http://localhost:3000/api/articles/1",
         response: "fixture:single_article.json",
       });
+      cy.route({
+        method: "POST",
+        url: "http://localhost:3000/api/auth",
+        response: "fixture:user_can_register.json",
+      });
+      cy.route({
+        method: "GET",
+        url: "http://localhost:3000/api/auth/validate_token**",
+        response: "fixture:user_can_register.json",
+      });
       cy.visit("/");
-      cy.get("[data-cy='article-1']").click();
+      cy.get("[data-cy='signup-button']").click();
+      cy.get("[data-cy='signup-form']").within(() => {
+        cy.get("[data-cy='input-email']").type("registered@user.com");
+        cy.get("[data-cy='input-password']").type("password");
+        cy.get("[data-cy='input-password-confirmation']").type("password");
+        cy.get("[data-cy='submit-btn']").click();
+      });
+      cy.get("[data-cy='article-index']").within(() => {
+        cy.get("[data-cy='article-1']").click();
+      });
     });
     it("read a specific article", () => {
       cy.get("[data-cy='article-display']").within(() => {
@@ -37,7 +56,7 @@ describe("User can", () => {
     });
   });
 
-  context("not see an article if improper params are provided", () => {
+  describe("not see an article if improper params are provided", () => {
     beforeEach(() => {
       cy.server();
       cy.route({
@@ -48,7 +67,24 @@ describe("User can", () => {
         },
         status: "404",
       });
+      cy.route({
+        method: "POST",
+        url: "http://localhost:3000/api/auth",
+        response: "fixture:user_can_register.json",
+      });
+      cy.route({
+        method: "GET",
+        url: "http://localhost:3000/api/auth/validate_token**",
+        response: "fixture:user_can_register.json",
+      });
       cy.visit("/");
+      cy.get("[data-cy='signup-button']").click();
+      cy.get("[data-cy='signup-form']").within(() => {
+        cy.get("[data-cy='input-email']").type("registered@user.com");
+        cy.get("[data-cy='input-password']").type("password");
+        cy.get("[data-cy='input-password-confirmation']").type("password");
+        cy.get("[data-cy='submit-btn']").click();
+      });
       cy.get("[data-cy='article-3']").click();
     });
     it("and is presented with an error  message ", () => {
@@ -56,6 +92,14 @@ describe("User can", () => {
         "contain",
         "Something went wrong, this article was not found"
       );
+    });
+  });
+
+  describe("NOT read article when they're not registered", () => {
+    it("displays registration form", () => {
+      cy.visit("/");
+      cy.get("[data-cy='article-3']").click();
+      cy.get("[data-cy='signup-form']").should("be.visible");
     });
   });
 });
