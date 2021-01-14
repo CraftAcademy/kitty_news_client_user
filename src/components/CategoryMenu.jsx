@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Menu, Segment } from "semantic-ui-react";
 import { getArticles } from "../modules/getArticles";
 import { useTranslation } from "react-i18next";
+import RegistrationForm from "./RegistrationForm"
 
 const CategoryMenu = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [activeItem, setActiveItem] = useState("home")
+  const { currentUser } = useSelector(state => state);
 
   return (
     <Segment attached="bottom" inverted style={{ marginTop: "-0.05em" }}>
@@ -73,6 +75,11 @@ const CategoryMenu = () => {
         >
           {t("culture")}
         </Menu.Item>
+        {!currentUser &&
+          <Menu.Item position="right">
+            <RegistrationForm />
+          </Menu.Item>
+        }
       </Menu >
     </Segment >
   );
