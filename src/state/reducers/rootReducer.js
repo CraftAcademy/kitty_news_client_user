@@ -53,13 +53,13 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         paymentSuccessMessage: action.payload,
-        paymentErrorMessage: ""
+        // paymentErrorMessage: ""
       };
     case "SET_PAYMENT_ERROR_MESSAGE":
       return {
         ...state,
         paymentErrorMessage: action.payload,
-        paymentSuccessMessage: ""
+        // paymentSuccessMessage: ""
       };
     default:
       return state;

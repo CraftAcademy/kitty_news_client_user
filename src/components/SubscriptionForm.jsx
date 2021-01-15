@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import performPayment from "../modules/stripePayment";
 import {
@@ -7,17 +7,30 @@ import {
   CardCVCElement,
   injectStripe,
 } from "react-stripe-elements";
-import { Button, Form, Modal, Message } from 'semantic-ui-react'
+import {
+  Button,
+  Form,
+  Modal,
+  Message,
+  Header,
+  Segment,
+} from "semantic-ui-react";
 
 const SubscriptionForm = (props) => {
-  const { currentUser, paymentErrorMessage, paymentSuccessMessage, paymentModalOpen } = useSelector(state => state);
-  const dispatch = useDispatch()
+  const {
+    currentUser,
+    paymentErrorMessage,
+    paymentSuccessMessage,
+    paymentModalOpen,
+  } = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const payWithStripe = async (event) => {
     event.preventDefault();
     const stripeResponse = await props.stripe.createToken();
-    stripeResponse.token && performPayment(stripeResponse.token.id, currentUser);
-  }
+    stripeResponse.token &&
+      performPayment(stripeResponse.token.id, currentUser);
+  };
 
   return (
     <Modal
@@ -28,15 +41,17 @@ const SubscriptionForm = (props) => {
       trigger={
         <Button inverted data-cy="become-subscriber">
           Subscribe!
-          </Button>
+        </Button>
       }
     >
-      <Modal.Header>Pay your yarn!</Modal.Header>
+      <Modal.Header>Pay your yarn and become a subscriber!</Modal.Header>
+      <Modal.Description>
+        <Segment>
+          <p>For only $75/year you'll access all of our Kitty News!</p>
+        </Segment>
+      </Modal.Description>
       <Modal.Content>
-        <Form
-          data-cy="payment-form"
-          onSubmit={payWithStripe}
-        >
+        <Form data-cy="payment-form" onSubmit={payWithStripe}>
           <Form.Field data-cy="card-number">
             <label>Card Number</label>
             <CardNumberElement />
@@ -49,29 +64,27 @@ const SubscriptionForm = (props) => {
             <label>CVC Cod</label>
             <CardCVCElement />
           </Form.Field>
-          <Form.Button>
-            Confirm Payment
-          </Form.Button>
+          <Form.Button>Confirm Payment</Form.Button>
+          <Modal.Description>
+            {paymentSuccessMessage && (
+              <Message
+                color="green"
+                size="big"
+                data-cy="payment-success-message"
+              >
+                {paymentSuccessMessage}
+              </Message>
+            )}
+            {paymentErrorMessage && (
+              <Message color="red" size="big" data-cy="payment-error-message">
+                {paymentErrorMessage}
+              </Message>
+            )}
+          </Modal.Description>
         </Form>
       </Modal.Content>
-      <Modal.Description>
-      {paymentSuccessMessage && (
-          <Message
-            color="green"
-            size="big"
-            data-cy="payment-success-message"
-          >
-            {paymentSuccessMessage}
-          </Message>
-        )}
-        {paymentErrorMessage && (
-          <Message color="red" size="big" data-cy="payment-error-message">
-            {paymentErrorMessage}
-          </Message>
-        )}
-      </Modal.Description>
-    </Modal >
-  )
-}
+    </Modal>
+  );
+};
 
-export default injectStripe(SubscriptionForm)
+export default injectStripe(SubscriptionForm);

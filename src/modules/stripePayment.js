@@ -3,6 +3,7 @@ import store from "../state/store/configureStore";
 
 const performPayment = async (stripeToken, credentials) => {
   try {
+    debugger
     const response = await axios.post(
       "/subscriptions",
       { stripeToken: stripeToken },
@@ -13,9 +14,10 @@ const performPayment = async (stripeToken, credentials) => {
       payload: response.data.message,
     });
   } catch (error) {
+    debugger
     store.dispatch({
       type: "SET_PAYMENT_ERROR_MESSAGE",
-      payload: error.response.data.errors.full_messages[0],
+      payload: error.response.data.message,
     });
   }
 };
