@@ -10,8 +10,9 @@ import {
 import { Button, Form, Modal, Message } from 'semantic-ui-react'
 
 const SubscriptionForm = (props) => {
-  const { currentUser, paymentMessage, paymentModalOpen } = useSelector(state => state);
+  const { currentUser, paymentErrorMessage, paymentSuccessMessage, paymentModalOpen } = useSelector(state => state);
   const dispatch = useDispatch()
+
   const payWithStripe = async (event) => {
     event.preventDefault();
     const stripeResponse = await props.stripe.createToken();
@@ -54,9 +55,20 @@ const SubscriptionForm = (props) => {
         </Form>
       </Modal.Content>
       <Modal.Description>
-        <Message data-cy="payment-message" negative>
-          {paymentMessage}
-        </Message>
+      {paymentSuccessMessage && (
+          <Message
+            color="green"
+            size="big"
+            data-cy="payment-success-message"
+          >
+            {paymentSuccessMessage}
+          </Message>
+        )}
+        {paymentErrorMessage && (
+          <Message color="red" size="big" data-cy="payment-error-message">
+            {paymentErrorMessage}
+          </Message>
+        )}
       </Modal.Description>
     </Modal >
   )

@@ -60,8 +60,8 @@ describe("User can become a subscriber", () => {
       });
       cy.get("button").contains("Confirm Payment").click();
     });
-    cy.get('[data-cy="payment-message"]').contains(
-      "Meow. Thanks for the money!"
+    cy.get('[data-cy="payment-success-message"]').contains(
+      "Meow. Thanks for the yarn!"
     );
   });
 });

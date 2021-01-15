@@ -14,7 +14,7 @@ const ArticleCard = ({ article }) => {
         size="small"
         wrapped
         ui={false}
-        src="https://www.veterinarypracticenews.com/wp-content/uploads/2019/08/bigstock-Little-Striped-Cute-Kitten-Sit-244080397-300x200.jpg"
+        src={article.image}
       />
       <Item.Content>
         <Item.Description>{article.title}</Item.Description>

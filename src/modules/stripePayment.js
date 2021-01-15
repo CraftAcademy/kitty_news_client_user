@@ -8,18 +8,13 @@ const performPayment = async (stripeToken, credentials) => {
       { stripeToken: stripeToken },
       { headers: credentials }
     );
-    response.data.paid
-      ? store.dispatch({
-          type: "SET_PAYMENT_MESSAGE",
-          payload: response.data.message,
-        })
-      : store.dispatch({
-          type: "SET_PAYMENT_MESSAGE",
-          payload: "Meow, You're out of yarn! Try again!",
-        });
+    store.dispatch({
+      type: "SET_PAYMENT_SUCCESS_MESSAGE",
+      payload: response.data.message,
+    });
   } catch (error) {
     store.dispatch({
-      type: "SET_PAYMENT_MESSAGE",
+      type: "SET_PAYMENT_ERROR_MESSAGE",
       payload: error.response.data.errors.full_messages[0],
     });
   }

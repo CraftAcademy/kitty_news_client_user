@@ -38,11 +38,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         modalOpen: false,
       };
-    case "SET_PAYMENT_MESSAGE":
-      return {
-        ...state,
-        paymentMessage: action.payload,
-      };
+
     case "OPEN_PAYMENT_FORM":
       return {
         ...state,
@@ -52,6 +48,18 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         paymentModalOpen: false,
+      };
+    case "SET_PAYMENT_SUCCESS_MESSAGE":
+      return {
+        ...state,
+        paymentSuccessMessage: action.payload,
+        paymentErrorMessage: ""
+      };
+    case "SET_PAYMENT_ERROR_MESSAGE":
+      return {
+        ...state,
+        paymentErrorMessage: action.payload,
+        paymentSuccessMessage: ""
       };
     default:
       return state;
