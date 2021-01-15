@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { Menu, Segment } from "semantic-ui-react";
-import { getArticles } from "../modules/getArticles";
-import { useTranslation } from "react-i18next";
-import RegistrationForm from "./RegistrationForm";
-import SubscriptionForm from "./SubscriptionForm";
+import React, { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import { Menu, Segment } from "semantic-ui-react"
+import { getArticles } from "../modules/getArticles"
+import { useTranslation } from "react-i18next"
+import RegistrationForm from "./RegistrationForm"
+import SubscriptionForm from "./SubscriptionForm"
 
 const CategoryMenu = () => {
-  const { t } = useTranslation();
-  const dispatch = useDispatch();
-  const [activeItem, setActiveItem] = useState("home");
-  const { currentUser } = useSelector((state) => state);
+  const { t } = useTranslation()
+  const dispatch = useDispatch()
+  const [activeItem, setActiveItem] = useState("home")
+  const { currentUser } = useSelector((state) => state)
 
   return (
     <Segment attached="bottom" inverted style={{ marginTop: "-0.05em" }}>
@@ -23,8 +23,8 @@ const CategoryMenu = () => {
           as={Link}
           to="/"
           onClick={() => {
-            getArticles.index(dispatch);
-            setActiveItem("home");
+            getArticles.index(dispatch)
+            setActiveItem("home")
           }}
         >
           {t("home_link")}
@@ -34,8 +34,8 @@ const CategoryMenu = () => {
           data-cy="category-global-politics"
           active={activeItem === "global_politics"}
           onClick={() => {
-            getArticles.index_by_category(1, dispatch);
-            setActiveItem("global_politics");
+            getArticles.index_by_category(1, dispatch)
+            setActiveItem("global_politics")
           }}
           as={Link}
           to="/"
@@ -47,8 +47,8 @@ const CategoryMenu = () => {
           data-cy="category-sports"
           active={activeItem === "sports"}
           onClick={() => {
-            getArticles.index_by_category(2, dispatch);
-            setActiveItem("sports");
+            getArticles.index_by_category(2, dispatch)
+            setActiveItem("sports")
           }}
           as={Link}
           to="/"
@@ -60,8 +60,8 @@ const CategoryMenu = () => {
           data-cy="category-self-care"
           active={activeItem === "self_care"}
           onClick={() => {
-            getArticles.index_by_category(3, dispatch);
-            setActiveItem("self_care");
+            getArticles.index_by_category(3, dispatch)
+            setActiveItem("self_care")
           }}
           as={Link}
           to="/"
@@ -73,8 +73,8 @@ const CategoryMenu = () => {
           data-cy="category-news"
           active={activeItem === "news"}
           onClick={() => {
-            getArticles.index_by_category(4, dispatch);
-            setActiveItem("news");
+            getArticles.index_by_category(4, dispatch)
+            setActiveItem("news")
           }}
           as={Link}
           to="/"
@@ -86,8 +86,8 @@ const CategoryMenu = () => {
           data-cy="category-culture"
           active={activeItem === "culture"}
           onClick={() => {
-            getArticles.index_by_category(5, dispatch);
-            setActiveItem("culture");
+            getArticles.index_by_category(5, dispatch)
+            setActiveItem("culture")
           }}
           as={Link}
           to="/"
@@ -95,11 +95,12 @@ const CategoryMenu = () => {
           {t("culture")}
         </Menu.Item>
         <Menu.Item position="right">
-          {currentUser ? <SubscriptionForm /> : <RegistrationForm />}
+          {!currentUser && <RegistrationForm />}
+          {currentUser && currentUser.data.role === "registered_user" && <SubscriptionForm />}
         </Menu.Item>
       </Menu>
     </Segment>
-  );
-};
+  )
+}
 
-export default CategoryMenu;
+export default CategoryMenu
