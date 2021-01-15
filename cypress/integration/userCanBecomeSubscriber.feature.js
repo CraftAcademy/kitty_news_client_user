@@ -17,7 +17,6 @@ describe("User can become a subscriber", () => {
       url: "http://localhost:3000/api/auth/validate_token**",
       response: "fixture:user_can_register.json",
     });
-
     cy.visit("/");
     cy.get("[data-cy='signup-button']").click();
     cy.get("[data-cy='signup-form']").within(() => {
@@ -26,9 +25,7 @@ describe("User can become a subscriber", () => {
       cy.get("[data-cy='input-password-confirmation']").type("password");
       cy.get("[data-cy='submit-btn']").click();
     });
-    cy.get("[data-cy='become-subscriber']").should("be.visible");
   });
-
   describe("successfully", () => {
     beforeEach(() => {
       cy.route({
@@ -76,8 +73,10 @@ describe("User can become a subscriber", () => {
       cy.route({
         method: "POST",
         url: "http://localhost:3000/api/subscriptions",
-        response: "fixture:payment_error_response.json",
-        status: 422,
+        response: {
+          message: "Hiss Hiss! Your payment info is a miss!",
+        },
+        status: "422",
       });
     });
     it("filling in invalid credit card information", () => {
@@ -89,7 +88,7 @@ describe("User can become a subscriber", () => {
             const $body = $iframe.contents().find("body");
             cy.wrap($body)
               .find('input[name="cardnumber"]')
-              .type("4242424242424241", { delay: 10 });
+              .type("4242424242424242", { delay: 10 });
           });
         });
         cy.get('[data-cy="card-expiry"]').within(() => {
@@ -97,20 +96,20 @@ describe("User can become a subscriber", () => {
             const $body = $iframe.contents().find("body");
             cy.wrap($body)
               .find('input[name="exp-date"]')
-              .type("1222", { delay: 10 });
+              .type("0225", { delay: 10 });
           });
         });
         cy.get('[data-cy="card-cvc"]').within(() => {
           cy.get('iframe[name^="__privateStripeFrame"]').then(($iframe) => {
             const $body = $iframe.contents().find("body");
-            cy.wrap($body).find('input[name="cvc"]').type("424", { delay: 10 });
+            cy.wrap($body).find('input[name="cvc"]').type("222", { delay: 10 });
           });
         });
         cy.get("button").contains("Confirm Payment").click();
+        cy.get('[data-cy="payment-error-message"]').contains(
+          "Hiss Hiss! Your payment info is a miss!"
+        );
       });
-      cy.get('[data-cy="payment-error-message"]').contains(
-        "Hiss Hiss! Your payment information is a miss!"
-      );
     });
   });
 });

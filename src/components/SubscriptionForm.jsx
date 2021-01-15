@@ -12,13 +12,11 @@ import {
   Form,
   Modal,
   Message,
-  Header,
   Segment,
 } from "semantic-ui-react";
 
 const SubscriptionForm = (props) => {
   const {
-    currentUser,
     paymentErrorMessage,
     paymentSuccessMessage,
     paymentModalOpen,
@@ -29,7 +27,7 @@ const SubscriptionForm = (props) => {
     event.preventDefault();
     const stripeResponse = await props.stripe.createToken();
     stripeResponse.token &&
-      performPayment(stripeResponse.token.id, currentUser);
+      performPayment(stripeResponse.token.id);
   };
 
   return (

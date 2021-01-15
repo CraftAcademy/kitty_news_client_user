@@ -16,15 +16,15 @@ axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 window.store = store;
 
 ReactDOM.render(
-  <StripeProvider apiKey="pk_test_51HuxwPB4iQLxMzwRoYvwIg9YWiZPJbCCNQvYgR53ye90XKjtqHZGIwJBbnOwoM0HRPf1YrQ0J44YJlUviKfXUTIU00HdNTkvl4">
-    <Provider store={store}>
+  <Provider store={store}>
+    <StripeProvider apiKey="pk_test_51HRXbsLRsHijJIX0zutPae262FCx438btFduSWoETwJ2HCC2vqSjG6sd4PA7RoddpyAvRwnLXUe1ujrUmsB4Gkn500iicqAMK9">
       <Suspense fallback={<div>Loading.... Meow!</div>}>
         <BrowserRouter>
           <App />
         </BrowserRouter>
       </Suspense>
-    </Provider>
-  </StripeProvider>,
+    </StripeProvider>
+  </Provider>,
   document.getElementById("root")
 );
 

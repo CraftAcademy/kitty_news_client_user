@@ -14,9 +14,12 @@ const getArticles = {
   },
 
   async show(articleId, dispatch, currentUser) {
+    let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"));
     if (currentUser) {
       try {
-        const response = await axios.get(`/articles/${articleId}`);
+        const response = await axios.get(`/articles/${articleId}`, {
+          headers: headers,
+        });
         dispatch({ type: "VIEW_ARTICLE", payload: response.data.article });
       } catch (error) {
         dispatch({
