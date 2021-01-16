@@ -1,7 +1,7 @@
 import React from "react"
 import { Form, Button, Icon, Modal, Message } from "semantic-ui-react"
-import {useDispatch, useSelector} from "react-redux"
-import {logIn} from "../modules/Authentication"
+import { useDispatch, useSelector } from "react-redux"
+import { logIn } from "../modules/Authentication"
 
 const LogInForm = () => {
   const { logInErrorMessage, logInModalOpen } = useSelector((state) => state)

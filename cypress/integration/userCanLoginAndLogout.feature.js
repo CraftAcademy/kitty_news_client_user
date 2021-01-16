@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe("user can login", () => {
   beforeEach(() => {
     cy.server();
@@ -35,7 +36,7 @@ describe("user can login", () => {
         cy.get("[data-cy='log-in-email']").type("registered@user.com");
         cy.get("[data-cy='log-in-password']").type("password");
         cy.get("[data-cy='log-in-submit-btn']").click();
-        cy.get("[data-cy='log-in-button']").should("not.be.visible");
+        cy.get("[data-cy='log-in-form']").should("not.be.visible");
       });
     });
   });

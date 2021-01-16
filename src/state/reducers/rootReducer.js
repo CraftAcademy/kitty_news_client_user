@@ -14,7 +14,6 @@ const rootReducer = (state = initialState, action) => {
         specificArticle: action.payload,
       }
     case "SET_CURRENT_USER":
-      debugger
       return {
         ...state,
         currentUser: action.payload,
@@ -70,6 +69,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         paymentErrorMessage: action.payload,
         paymentSuccessMessage: "",
+      }
+    case "LOGIN_ERROR_MESSAGE":
+      return {
+        ...state,
+        logInErrorMessage: action.payload,
       }
     default:
       return state
