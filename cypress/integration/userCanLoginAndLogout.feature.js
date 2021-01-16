@@ -64,4 +64,34 @@ describe('user can login', () => {
       })
     })
   })
+
+  describe("user can log out", () => {
+    beforeEach(() => {
+      cy.route({
+        method: "POST",
+        url: "http://localhost:3000/api/auth/sign_in",
+        response: "fixture:user_can_login.json",
+      })
+      cy.route({
+        method: "GET",
+        url: "http://localhost:3000/api/auth/validate_token**",
+        response: "fixture:user_can_login.json",
+      })
+      cy.route({
+        method: "DELETE",
+        url: "http://localhost:3000/api/auth/sign_out",
+      })
+      cy.visit("/")
+      cy.get("[data-cy='log-in-button']").click()
+      cy.get("[data-cy='log-in-form']").within(() => {
+        cy.get("[data-cy='log-in-email']").type("registered@user.com")
+        cy.get("[data-cy='log-in-password']").type("password")
+        cy.get("[data-cy='log-in-submit-btn']").click()
+      })
+    })
+    it("successfully", () => {
+      cy.get("[data-cy='log-out-button']").click()
+      cy.get("[data-cy='log-in-button']").should("be.visible")
+    })
+  })
 })

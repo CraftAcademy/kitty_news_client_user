@@ -48,4 +48,16 @@ const logIn = async (event) => {
   }
 }
 
-export { signUp, logIn }
+const logOut = async () => {
+  try {
+    const response = await auth.signOut()
+    store.dispatch({
+      type: 'SET_LOG_OUT',
+    })
+    alert('Bye Bye. Next time bring tuna!')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { signUp, logIn, logOut }
