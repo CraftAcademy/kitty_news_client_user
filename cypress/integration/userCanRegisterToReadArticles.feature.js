@@ -29,11 +29,8 @@ describe("user can register", () => {
         cy.get("[data-cy='input-password']").type("password");
         cy.get("[data-cy='input-password-confirmation']").type("password");
         cy.get("[data-cy='submit-btn']").click();
-        cy.get("[data-cy='signup']").should("not.exist");
+        cy.get("[data-cy='signup-button']").should("not.be.visible");
       });
-    });
-    it("hides the sign up button", () => {
-      cy.get("[data-cy='signup-button']").should("not.be.visible");
     });
   });
 
