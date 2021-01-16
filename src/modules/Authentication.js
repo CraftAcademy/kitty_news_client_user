@@ -50,7 +50,7 @@ const logIn = async (event) => {
 
 const logOut = async () => {
   try {
-    const response = await auth.signOut()
+    await auth.signOut()
     store.dispatch({
       type: 'SET_LOG_OUT',
     })

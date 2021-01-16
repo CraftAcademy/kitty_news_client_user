@@ -3,7 +3,7 @@ const initialState = {
   specificArticle: {},
   modalOpen: false,
   paymentModalOpen: false,
-  logInModalOpen: false
+  logInModalOpen: false,
 }
 
 export default initialState

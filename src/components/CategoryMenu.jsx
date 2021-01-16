@@ -103,13 +103,11 @@ const CategoryMenu = () => {
           )}
         </Menu.Item>
         <Menu.Item>
-          {!currentUser && <LogInForm />}
-          {currentUser && <Button data-cy="log-out-button" onClick={logOut} inverted>Sign out</Button>}
-          {/* {currentUser ? (
+          {currentUser ?
             <Button data-cy="log-out-button" onClick={logOut} inverted>Sign out</Button>
-          ) : (
+            :
             <LogInForm />
-          )} */}
+          }
         </Menu.Item>
       </Menu>
     </Segment>
