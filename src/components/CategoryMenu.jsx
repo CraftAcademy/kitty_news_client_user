@@ -6,6 +6,7 @@ import { getArticles } from '../modules/getArticles'
 import { useTranslation } from 'react-i18next'
 import RegistrationForm from './RegistrationForm'
 import SubscriptionForm from './SubscriptionForm'
+import LogInForm from "./LogInForm"
 
 const CategoryMenu = () => {
   const { t } = useTranslation()
@@ -104,6 +105,9 @@ const CategoryMenu = () => {
             currentUser.data.role === 'registered_user' && (
               <SubscriptionForm />
             )}
+        </Menu.Item>
+        <Menu.Item>
+          <LogInForm/>
         </Menu.Item>
       </Menu>
     </Segment>
