@@ -24,7 +24,7 @@ const LogInForm = () => {
         <Modal.Content>
           <Form
             data-cy="log-in-form"
-            onSubmit={(event) => logIn(event, dispatch)}
+            onSubmit={(event) => logIn(event)}
           >
             <Form.Input
               icon="at"
@@ -48,15 +48,15 @@ const LogInForm = () => {
               <Icon name="user"></Icon>
               Submit
             </Button>
+            <Modal.Description>
+              {logInErrorMessage && (
+                <Message data-cy="log-in-error-message" negative>
+                  {logInErrorMessage}
+                </Message>
+              )}
+            </Modal.Description>
           </Form>
         </Modal.Content>
-        <Modal.Description>
-          {logInErrorMessage && (
-            <Message data-cy="log-in-error-message" negative>
-              {logInErrorMessage}
-            </Message>
-          )}
-        </Modal.Description>
       </Modal>
     </>
   )

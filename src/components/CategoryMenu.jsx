@@ -107,7 +107,7 @@ const CategoryMenu = () => {
             )}
         </Menu.Item>
         <Menu.Item>
-          <LogInForm/>
+          <LogInForm />
         </Menu.Item>
       </Menu>
     </Segment>
