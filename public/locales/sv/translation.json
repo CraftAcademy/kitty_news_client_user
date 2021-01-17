@@ -1,11 +1,11 @@
 {
-  "global_politics": "Omvärlden",
+  "global_politics": "Omvärld",
   "sports": "Sport",
   "self_care": "Hälsa",
   "news": "Nyheter",
   "culture": "Kultur",
-  "empty_index_message": "Det finns tyvärr inga nyheter. Kontrollera din internet uppkoppling",
-  "footer": "Inga hundar tillåts!!",
+  "empty_index_message": "Hiss! Det finns tyvärr inga nyheter.",
+  "footer": "Inga hundar tillåtna!",
   "home_link": "Hem",
   "sign_out": "Logga Ut",
   "log_in": "Logga In",
@@ -15,7 +15,7 @@
   "submit_reg": "Registrera Dig",
   "login_here": "Logga In",
   "subscribe_sub": "Prenumerera",
-  "pay_header": "Ge oss garn och bli en medlem",
+  "pay_header": "Ge oss garn och bli medlem",
   "750_sek_year": "För bara 750 kr/år får du full tillgång till Kitty News!",
   "card_number": "Kortnummer",
   "expiry_date": "Utgångsdatum",
@@ -23,5 +23,6 @@
   "confirm_payment": "Bekräfta Betalning",
   "email": "E-post",
   "password": "Lösenord",
-  "password_confirmation": "Bekräfta Lösenord"
+  "password_confirmation": "Bekräfta Lösenord",
+  "advertise_header": "Reklam"
 }

@@ -17,17 +17,19 @@ const DisplayArticle = () => {
 
   return (
     <>
-      <Grid data-cy="article-display" centered>
+      <Grid data-cy='article-display' centered>
         <Grid.Column width={13}>
-          <h2 data-cy="title">{specificArticle.title}</h2>
-          <Image src={specificArticle.image} size="small" />
-          <h3 data-cy="lead">{specificArticle.lead}</h3>
-          <p data-cy="body">{specificArticle.body}</p>
+          <h2 data-cy='title'>{specificArticle.title}</h2>
+          <Image src={specificArticle.image} size='small' />
+          <h3 data-cy='lead'>{specificArticle.lead}</h3>
+          <p data-cy='author'>{specificArticle.author}</p>
+          <p data-cy='body'>{specificArticle.body}</p>
+          <p data-cy='created'>{specificArticle.created}</p>
         </Grid.Column>
       </Grid>
 
       {errorMessage && (
-        <Container data-cy="error-article">
+        <Container data-cy='error-article'>
           <h1>{errorMessage}</h1>
         </Container>
       )}

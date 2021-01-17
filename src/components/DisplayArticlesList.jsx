@@ -41,7 +41,7 @@ const DisplayArticlesList = () => {
         )}
       </Grid.Column>
       <Grid.Column width={3}>
-        <Header size='small'>Advertising</Header>
+        <Header size='small'>{t('advertise_header')}</Header>
         <Image src={catAd1} size='medium' />
         <br />
         <Image src={catAd2} size='medium' />

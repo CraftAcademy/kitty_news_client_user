@@ -4,8 +4,8 @@
   "self_care": "Self Care",
   "news": "News",
   "culture": "Culture",
-  "empty_index_message": "Sorry, there's nothing to see here yet!",
-  "footer": "No dogs allowed!!",
+  "empty_index_message": "Hiss! There's nothing to see here yet!",
+  "footer": "No dogs allowed!",
   "home_link": "Home",
   "sign_out": "Sign Out",
   "log_in": "Log In",
@@ -23,5 +23,6 @@
   "confirm_payment": "Confirm Payment",
   "email": "Email",
   "password": "Password",
-  "password_confirmation": "Password Confirmation"
+  "password_confirmation": "Password Confirmation",
+  "advertise_header": "Advertisements"
 }

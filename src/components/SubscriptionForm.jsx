@@ -7,13 +7,7 @@ import {
   CardCVCElement,
   injectStripe,
 } from 'react-stripe-elements'
-import {
-  Button,
-  Form,
-  Modal,
-  Message,
-  Segment,
-} from 'semantic-ui-react'
+import { Button, Form, Modal, Message, Segment } from 'semantic-ui-react'
 import { useTranslation } from 'react-i18next'
 
 const SubscriptionForm = (props) => {
@@ -38,32 +32,28 @@ const SubscriptionForm = (props) => {
       onOpen={() => dispatch({ type: 'OPEN_PAYMENT_FORM' })}
       open={paymentModalOpen}
       trigger={
-        <Button inverted data-cy="become-subscriber">
+        <Button inverted data-cy='become-subscriber'>
           {t('subscribe_sub')}
         </Button>
       }
     >
-      <Modal.Header>
-      {t('pay_header')}
-      </Modal.Header>
+      <Modal.Header>{t('pay_header')}</Modal.Header>
       <Modal.Description>
         <Segment>
-          <p>
-            {t('750_sek_year')}
-          </p>
+          <p>{t('750_sek_year')}</p>
         </Segment>
       </Modal.Description>
       <Modal.Content>
-        <Form data-cy="payment-form" onSubmit={payWithStripe}>
-          <Form.Field data-cy="card-number">
+        <Form data-cy='payment-form' onSubmit={payWithStripe}>
+          <Form.Field data-cy='card-number'>
             <label>{t('card_number')}</label>
             <CardNumberElement />
           </Form.Field>
-          <Form.Field data-cy="card-expiry">
+          <Form.Field data-cy='card-expiry'>
             <label>{t('expiry_date')}</label>
             <CardExpiryElement />
           </Form.Field>
-          <Form.Field data-cy="card-cvc">
+          <Form.Field data-cy='card-cvc'>
             <label>{t('cvc_code')}</label>
             <CardCVCElement />
           </Form.Field>
@@ -71,19 +61,15 @@ const SubscriptionForm = (props) => {
           <Modal.Description>
             {paymentSuccessMessage && (
               <Message
-                color="green"
-                size="big"
-                data-cy="payment-success-message"
+                color='green'
+                size='big'
+                data-cy='payment-success-message'
               >
                 {paymentSuccessMessage}
               </Message>
             )}
             {paymentErrorMessage && (
-              <Message
-                color="red"
-                size="big"
-                data-cy="payment-error-message"
-              >
+              <Message color='red' size='big' data-cy='payment-error-message'>
                 {paymentErrorMessage}
               </Message>
             )}
