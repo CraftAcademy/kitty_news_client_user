@@ -28,7 +28,7 @@ const DisplayArticle = () => {
       <Grid data-cy='article-display'>
         <Grid.Column width={12} style={{ padding: 70 }}>
           <h2 data-cy='title'>{specificArticle.title}</h2>
-          <Image src={specificArticle.image} size='small' />
+          <Image src={specificArticle.image} size='medium' />
           <h3 data-cy='lead'>{specificArticle.lead}</h3>
           <p data-cy='author'>{specificArticle.author}</p>
           <p data-cy='body'>{specificArticle.body}</p>
