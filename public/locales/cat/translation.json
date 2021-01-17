@@ -6,5 +6,22 @@
   "culture": "Meow",
   "empty_index_message": "Meow, Meow Meow Meow Meow Meow!",
   "footer": "Meow Meow Meow",
-  "home_link": "MEOW"
+  "home_link": "MEOW",
+  "sign_out": "Meow",
+  "log_in": "Meow",
+  "submit": "Meow",
+  "sign_up": "Meow",
+  "create_account": "Meow Meow",
+  "submit_reg": "Meow",
+  "login_here": "Meow Meow",
+  "subscribe_sub": "Meow",
+  "pay_header": "Meow Meow Meow Meow",
+  "750_sek_year": "Meow 750 Meow/Meow Meow Meow Meow Meow!",
+  "card_number": "Meow",
+  "expiry_date": "Meow Meow",
+  "cvc_code": "Meow",
+  "confirm_payment": "Meow Meow",
+  "email": "Meow",
+  "password": "Meow",
+  "password_confirmation": "Meow Meow"
 }

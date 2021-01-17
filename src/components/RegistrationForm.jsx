@@ -2,8 +2,10 @@ import React from 'react'
 import { Form, Button, Icon, Modal, Message } from 'semantic-ui-react'
 import { useDispatch, useSelector } from 'react-redux'
 import { signUp } from '../modules/Authentication'
+import { useTranslation } from 'react-i18next'
 
 const RegistrationForm = () => {
+  const { t } = useTranslation()
   const { registerErrorMessage, modalOpen } = useSelector(
     (state) => state
   )
@@ -18,11 +20,11 @@ const RegistrationForm = () => {
         open={modalOpen}
         trigger={
           <Button data-cy="signup-button" inverted>
-            Sign up!
+            {t('sign_up')}
           </Button>
         }
       >
-        <Modal.Header>Create an account!</Modal.Header>
+        <Modal.Header>{t('create_account')}</Modal.Header>
         <Modal.Content>
           <Form
             data-cy="signup-form"
@@ -31,33 +33,33 @@ const RegistrationForm = () => {
             <Form.Input
               icon="at"
               type="text"
-              label="Email"
+              label={t('email')}
               name="email"
               data-cy="input-email"
-              placeholder="Email"
+              placeholder={t('email')}
               iconPosition="left"
             />
             <Form.Input
               icon="key"
               type="password"
-              label="Password"
+              label={t('password')}
               name="password"
               data-cy="input-password"
-              placeholder="Password"
+              placeholder={t('password')}
               iconPosition="left"
             />
             <Form.Input
               icon="key"
               type="password"
-              label="Password Confirmation"
+              label={t('password_confirmation')}
               name="password_confirmation"
               data-cy="input-password-confirmation"
-              placeholder="Password Confirmation"
+              placeholder={t('password_confirmation')}
               iconPosition="left"
             />
             <Button data-cy="submit-btn" icon labelPosition="left">
               <Icon name="user"></Icon>
-              Submit
+              {t('submit_reg')}
             </Button>
             <Modal.Description>
               {registerErrorMessage && (

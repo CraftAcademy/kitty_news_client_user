@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer>
       <p id="footer" data-cy="footer">
-        {t("footer")} {React.version}
+        {t("footer")}
       </p>
     </footer>
   );
