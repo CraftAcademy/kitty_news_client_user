@@ -38,7 +38,7 @@ const logIn = async (event) => {
       payload: response,
     })
     store.dispatch({ type: 'CLOSE_LOGIN_FORM' })
-    alert( 'Welcome, cute kitty!')
+    alert('Welcome, cute kitty!')
   } catch (error) {
     store.dispatch({
       type: 'LOGIN_ERROR_MESSAGE',

@@ -5,7 +5,7 @@
   "news": "Nyheter",
   "culture": "Kultur",
   "empty_index_message": "Det finns tyvärr inga nyheter. Kontrollera din internet uppkoppling",
-  "footer": "Skapad med React",
+  "footer": "Inga hundar tillåts!!",
   "home_link": "Hem",
   "sign_out": "Logga Ut",
   "log_in": "Logga In",
@@ -18,10 +18,10 @@
   "pay_header": "Ge oss garn och bli en medlem",
   "750_sek_year": "För bara 750 kr/år får du full tillgång till Kitty News!",
   "card_number": "Kortnummer",
-  "expiry_date": "Utgångs Datum",
+  "expiry_date": "Utgångsdatum",
   "cvc_code": "CVC Kod",
   "confirm_payment": "Bekräfta Betalning",
   "email": "E-post",
   "password": "Lösenord",
-  "password_confirmation": "Lösenords Bekräftelse"
+  "password_confirmation": "Bekräfta Lösenord"
 }
