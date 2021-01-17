@@ -6,5 +6,14 @@
   "culture": "Culture",
   "empty_index_message": "Sorry, there's nothing to see here yet!",
   "footer": "Made with React",
-  "home_link": "Home"
+  "home_link": "Home",
+  "sign_out": "Sign Out",
+  "log_in": "Log In",
+  "submit": "Submit",
+  "sign_up": "Sign Up",
+  "create_account": "Create an Account",
+  "submit_reg": "Submit",
+  "login_here": "Log In Here!",
+  "subscribe_sub": "Submit",
+  "pay_header": "Pay your yarn and become a subscriber!"
 }

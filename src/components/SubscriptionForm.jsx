@@ -14,8 +14,10 @@ import {
   Message,
   Segment,
 } from 'semantic-ui-react'
+import { useTranslation } from 'react-i18next'
 
 const SubscriptionForm = (props) => {
+  const { t } = useTranslation()
   const {
     paymentErrorMessage,
     paymentSuccessMessage,
@@ -38,11 +40,12 @@ const SubscriptionForm = (props) => {
       trigger={
         <Button inverted data-cy="become-subscriber">
           Subscribe!
+          {t('subscribe_sub')}
         </Button>
       }
     >
       <Modal.Header>
-        Pay your yarn and become a subscriber!
+      {t('pay_header')}
       </Modal.Header>
       <Modal.Description>
         <Segment>

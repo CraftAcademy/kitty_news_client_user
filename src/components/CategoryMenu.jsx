@@ -104,7 +104,7 @@ const CategoryMenu = () => {
         </Menu.Item>
         <Menu.Item>
           {currentUser ?
-            <Button data-cy='log-out-button' onClick={logOut} inverted>Sign out</Button>
+            <Button data-cy='log-out-button' onClick={logOut} inverted>{t('sign_out')}</Button>
             :
             <LogInForm />
           }
