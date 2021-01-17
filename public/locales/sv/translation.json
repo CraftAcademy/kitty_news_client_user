@@ -15,5 +15,10 @@
   "submit_reg": "Skicka In",
   "login_here": "Logga In Here",
   "subscribe_sub": "Skicka In",
-  "pay_header": "Ge oss garn och bli en medlem"
+  "pay_header": "Ge oss garn och bli en medlem",
+  "750_sek_year": "För bara 750 kr/år får du full tillgång till Kitty News!",
+  "card_number": "Kort Numer",
+  "expiry_date": "Utgångs Datum",
+  "cvc_code": "CVC Kod",
+  "confirm_payment": "Bekräfta Betalning"
 }

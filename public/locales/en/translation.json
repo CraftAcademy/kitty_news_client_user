@@ -15,5 +15,10 @@
   "submit_reg": "Submit",
   "login_here": "Log In Here!",
   "subscribe_sub": "Submit",
-  "pay_header": "Pay your yarn and become a subscriber!"
+  "pay_header": "Pay your yarn and become a subscriber!",
+  "750_sek_year": "For only 750 SEK/year you'll access all of our Kitty News!",
+  "card_number": "Card Number",
+  "expiry_date": "Expiry Date",
+  "cvc_code": "CVC code",
+  "confirm_payment": "Confirm Payment"
 }

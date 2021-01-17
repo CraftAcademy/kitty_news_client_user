@@ -50,25 +50,25 @@ const SubscriptionForm = (props) => {
       <Modal.Description>
         <Segment>
           <p>
-            For only 750 SEK/year you'll access all of our Kitty News!
+            {t('750_sek_year')}
           </p>
         </Segment>
       </Modal.Description>
       <Modal.Content>
         <Form data-cy="payment-form" onSubmit={payWithStripe}>
           <Form.Field data-cy="card-number">
-            <label>Card Number</label>
+            <label>{t('card_number')}</label>
             <CardNumberElement />
           </Form.Field>
           <Form.Field data-cy="card-expiry">
-            <label>Expiry Date</label>
+            <label>{t('expiry_date')}</label>
             <CardExpiryElement />
           </Form.Field>
           <Form.Field data-cy="card-cvc">
-            <label>CVC Code</label>
+            <label>{t('cvc_code')}</label>
             <CardCVCElement />
           </Form.Field>
-          <Form.Button>Confirm Payment</Form.Button>
+          <Form.Button>{t('confirm_payment')}</Form.Button>
           <Modal.Description>
             {paymentSuccessMessage && (
               <Message
