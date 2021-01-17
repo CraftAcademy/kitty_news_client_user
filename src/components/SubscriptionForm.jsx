@@ -47,7 +47,7 @@ const SubscriptionForm = (props) => {
       <Modal.Description>
         <Segment>
           <p>
-            For only $75/year you'll access all of our Kitty News!
+            For only 750 SEK/year you'll access all of our Kitty News!
           </p>
         </Segment>
       </Modal.Description>
@@ -62,7 +62,7 @@ const SubscriptionForm = (props) => {
             <CardExpiryElement />
           </Form.Field>
           <Form.Field data-cy="card-cvc">
-            <label>CVC Cod</label>
+            <label>CVC Code</label>
             <CardCVCElement />
           </Form.Field>
           <Form.Button>Confirm Payment</Form.Button>

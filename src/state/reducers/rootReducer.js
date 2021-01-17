@@ -38,6 +38,16 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         modalOpen: false,
       }
+    case 'OPEN_LOGIN_FORM':
+      return {
+        ...state,
+        logInModalOpen: true,
+      }
+    case 'CLOSE_LOGIN_FORM':
+      return {
+        ...state,
+        logInModalOpen: false,
+      }
     case 'OPEN_PAYMENT_FORM':
       return {
         ...state,
@@ -59,6 +69,16 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         paymentErrorMessage: action.payload,
         paymentSuccessMessage: '',
+      }
+    case 'LOGIN_ERROR_MESSAGE':
+      return {
+        ...state,
+        logInErrorMessage: action.payload,
+      }
+    case 'SET_LOG_OUT':
+      return {
+        ...state,
+        currentUser: null,
       }
     default:
       return state

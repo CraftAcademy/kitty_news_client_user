@@ -26,7 +26,7 @@ const RegistrationForm = () => {
         <Modal.Content>
           <Form
             data-cy="signup-form"
-            onSubmit={(event) => signUp(event, dispatch)}
+            onSubmit={(event) => signUp(event)}
           >
             <Form.Input
               icon="at"
@@ -59,15 +59,15 @@ const RegistrationForm = () => {
               <Icon name="user"></Icon>
               Submit
             </Button>
+            <Modal.Description>
+              {registerErrorMessage && (
+                <Message data-cy="register-error-message" negative>
+                  {registerErrorMessage}
+                </Message>
+              )}
+            </Modal.Description>
           </Form>
         </Modal.Content>
-        <Modal.Description>
-          {registerErrorMessage && (
-            <Message data-cy="register-error-message" negative>
-              {registerErrorMessage}
-            </Message>
-          )}
-        </Modal.Description>
       </Modal>
     </>
   )

@@ -71,10 +71,10 @@ describe('User can become a subscriber', () => {
           )
         })
         cy.get('button').contains('Confirm Payment').click()
+        cy.get('[data-cy="payment-success-message"]').contains(
+          'Meow. Thanks for the yarn!'
+        )
       })
-      cy.get('[data-cy="payment-success-message"]').contains(
-        'Meow. Thanks for the yarn!'
-      )
     })
   })
 
