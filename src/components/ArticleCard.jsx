@@ -12,8 +12,10 @@ const ArticleCard = ({ article }) => {
     >
       <Item.Image size='small' wrapped ui={false} src={article.image} />
       <Item.Content>
-        <Item.Description>{article.title}</Item.Description>
-        <Item.Meta>{article.lead}</Item.Meta>
+        <Item.Header>{article.title}</Item.Header>
+        <Item.Description>{article.lead}</Item.Description>
+        <Item.Meta>{article.category}</Item.Meta>
+        <Item.Meta>{article.created}</Item.Meta>
       </Item.Content>
     </Item>
   )
