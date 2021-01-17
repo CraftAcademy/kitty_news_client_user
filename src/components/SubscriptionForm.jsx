@@ -39,7 +39,6 @@ const SubscriptionForm = (props) => {
       open={paymentModalOpen}
       trigger={
         <Button inverted data-cy="become-subscriber">
-          Subscribe!
           {t('subscribe_sub')}
         </Button>
       }

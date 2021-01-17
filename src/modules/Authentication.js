@@ -1,6 +1,5 @@
 import JtockAuth from 'j-tockauth'
 import store from '../state/store/configureStore'
-import { useTranslation } from 'react-i18next'
 
 const auth = new JtockAuth({
   host: process.env.REACT_APP_API_URL,
@@ -29,7 +28,6 @@ const signUp = async (event) => {
 }
 
 const logIn = async (event) => {
-  const { t } = useTranslation()
   try {
     const response = await auth.signIn(
       event.target.email.value,

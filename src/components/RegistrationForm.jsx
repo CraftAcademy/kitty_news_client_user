@@ -33,28 +33,28 @@ const RegistrationForm = () => {
             <Form.Input
               icon="at"
               type="text"
-              label="Email"
+              label={t('email')}
               name="email"
               data-cy="input-email"
-              placeholder="Email"
+              placeholder={t('email')}
               iconPosition="left"
             />
             <Form.Input
               icon="key"
               type="password"
-              label="Password"
+              label={t('password')}
               name="password"
               data-cy="input-password"
-              placeholder="Password"
+              placeholder={t('password')}
               iconPosition="left"
             />
             <Form.Input
               icon="key"
               type="password"
-              label="Password Confirmation"
+              label={t('password_confirmation')}
               name="password_confirmation"
               data-cy="input-password-confirmation"
-              placeholder="Password Confirmation"
+              placeholder={t('password_confirmation')}
               iconPosition="left"
             />
             <Button data-cy="submit-btn" icon labelPosition="left">

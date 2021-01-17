@@ -31,19 +31,20 @@ const LogInForm = () => {
             <Form.Input
               icon="at"
               type="text"
-              label="Email"
               name="email"
+              label={t('email')}
               data-cy="log-in-email"
-              placeholder="Email"
+              placeholder={t('email')}
               iconPosition="left"
             />
+              
             <Form.Input
               icon="key"
               type="password"
-              label="Password"
               name="password"
+              label={t('password')}
               data-cy="log-in-password"
-              placeholder="Password"
+              placeholder={t('password')}
               iconPosition="left"
             />
             <Button data-cy="log-in-submit-btn" icon labelPosition="left">

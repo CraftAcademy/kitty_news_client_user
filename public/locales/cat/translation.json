@@ -20,5 +20,8 @@
   "card_number": "Meow",
   "expiry_date": "Meow Meow",
   "cvc_code": "Meow",
-  "confirm_payment": "Meow Meow"
+  "confirm_payment": "Meow Meow",
+  "email": "Meow",
+  "password": "Meow",
+  "password_confirmation": "Meow Meow"
 }
