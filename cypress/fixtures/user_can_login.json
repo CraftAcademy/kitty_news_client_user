@@ -6,6 +6,6 @@
     "uid": "registered@user.com",
     "name": "user",
     "allow_password_change": false,
-    "role": "registered_user"
+    "role": "subscriber"
   }
 }
