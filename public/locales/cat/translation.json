@@ -4,7 +4,7 @@
   "self_care": "Meow",
   "news": "Meow",
   "culture": "Meow",
-  "empty_index_message": "Meow, Meow Meow Meow Meow Meow!",
+  "empty_index_message": "Meow Meow Meow Meow Meow Meow!",
   "footer": "Meow Meow Meow",
   "home_link": "MEOW",
   "sign_out": "Meow",
@@ -23,5 +23,6 @@
   "confirm_payment": "Meow Meow",
   "email": "Meow",
   "password": "Meow",
-  "password_confirmation": "Meow Meow"
+  "password_confirmation": "Meow Meow",
+  "advertise_header": "Meow"
 }

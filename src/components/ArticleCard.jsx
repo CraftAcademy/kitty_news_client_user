@@ -1,6 +1,6 @@
-import React from "react";
-import { Item } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
+import React from 'react'
+import { Item } from 'semantic-ui-react'
+import { NavLink } from 'react-router-dom'
 
 const ArticleCard = ({ article }) => {
   return (
@@ -10,18 +10,15 @@ const ArticleCard = ({ article }) => {
       as={NavLink}
       to={`/articles/${article.id}`}
     >
-      <Item.Image
-        size="small"
-        wrapped
-        ui={false}
-        src={article.image}
-      />
+      <Item.Image size='small' wrapped ui={false} src={article.image} />
       <Item.Content>
-        <Item.Description>{article.title}</Item.Description>
-        <Item.Meta>{article.lead}</Item.Meta>
+        <Item.Header>{article.title}</Item.Header>
+        <Item.Description>{article.lead}</Item.Description>
+        <Item.Meta>{article.category}</Item.Meta>
+        <Item.Meta>{article.created}</Item.Meta>
       </Item.Content>
     </Item>
-  );
-};
+  )
+}
 
-export default ArticleCard;
+export default ArticleCard

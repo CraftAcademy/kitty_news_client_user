@@ -17,9 +17,7 @@ const getArticles = {
   },
 
   async show(articleId, dispatch, currentUser) {
-    let headers = JSON.parse(
-      localStorage.getItem('J-tockAuth-Storage')
-    )
+    let headers = JSON.parse(localStorage.getItem('J-tockAuth-Storage'))
     if (currentUser) {
       if (currentUser.data.role === 'registered_user') {
         dispatch({ type: 'OPEN_PAYMENT_FORM' })

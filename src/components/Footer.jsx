@@ -1,15 +1,15 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <footer>
-      <p id="footer" data-cy="footer">
-        {t("footer")}
-      </p>
+      <h2 id='footer' data-cy='footer'>
+        {t('footer')}
+      </h2>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

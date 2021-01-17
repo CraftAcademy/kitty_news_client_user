@@ -10,16 +10,16 @@ describe("User can change language to", () => {
       "contain",
       "Global Politics"
     );
-    cy.get("[data-cy='footer']").should("contain", "No dogs allowed!!")
+    cy.get("[data-cy='footer']").should("contain", "No dogs allowed!")
   });
 
   it("swedish by clicking swedish flag icon", () => {
     cy.get("[data-cy='swedish-icon']").click();
     cy.get("[data-cy='category-global-politics']").should(
       "contain",
-      "Omvärlden"
+      "Omvärld"
     );
-    cy.get("[data-cy='footer']").should("contain", "Inga hundar tillåts!!")
+    cy.get("[data-cy='footer']").should("contain", "Inga hundar tillåtna!")
   });
 
   it("cat-language by clicking cat-paw icon", () => {

@@ -1,45 +1,46 @@
-import React from "react";
-import { Menu, Segment, Flag, Icon } from "semantic-ui-react";
-import { useTranslation } from "react-i18next";
+import React from 'react'
+import { Menu, Segment, Flag, Icon } from 'semantic-ui-react'
+import { useTranslation } from 'react-i18next'
 
 const Header = () => {
-  const { i18n } = useTranslation();
+  const { i18n } = useTranslation()
 
   return (
     <Segment
-      attached="top"
+      attached='top'
       style={{
-        width: "100%",
-        height: "80px",
+        width: '100%',
+        height: '80px',
         backgroundImage: `url("images/KittyNews5.5.5.png")`,
-        backgroundRepeat: "no-repeat",
-      }}>
-      <Menu inverted secondary floated="right">
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <Menu inverted secondary floated='right'>
         <Flag
-          name="gb"
-          data-cy="english-icon"
+          name='gb'
+          data-cy='english-icon'
           onClick={() => {
-            i18n.changeLanguage("en");
+            i18n.changeLanguage('en')
           }}
         />
         <Flag
-          name="se"
-          data-cy="swedish-icon"
+          name='se'
+          data-cy='swedish-icon'
           onClick={() => {
-            i18n.changeLanguage("sv");
+            i18n.changeLanguage('sv')
           }}
         />
         <Icon
-          name="paw"
-          color="yellow"
-          data-cy="cat-icon"
+          name='paw'
+          color='yellow'
+          data-cy='cat-icon'
           onClick={() => {
-            i18n.changeLanguage("cat");
+            i18n.changeLanguage('cat')
           }}
         />
       </Menu>
     </Segment>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
