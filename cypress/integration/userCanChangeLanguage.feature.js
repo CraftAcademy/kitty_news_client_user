@@ -10,7 +10,7 @@ describe("User can change language to", () => {
       "contain",
       "Global Politics"
     );
-    cy.get("[data-cy='footer']").should("contain", "Made with React")
+    cy.get("[data-cy='footer']").should("contain", "No dogs allowed!!")
   });
 
   it("swedish by clicking swedish flag icon", () => {
@@ -19,7 +19,7 @@ describe("User can change language to", () => {
       "contain",
       "Omvärlden"
     );
-    cy.get("[data-cy='footer']").should("contain", "Skapad med React")
+    cy.get("[data-cy='footer']").should("contain", "Inga hundar tillåts!!")
   });
 
   it("cat-language by clicking cat-paw icon", () => {
