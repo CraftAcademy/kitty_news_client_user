@@ -22,32 +22,32 @@ This is the web application for users of Kitty News. Visitors can only see a lis
 ## User stories
 
 ```
-As a visitor,
+As a visitor
 In order to choose an article to read
 I would like to be able to see the articles listed on a page
 ```
 
 ```
-As a visitor,
+As a visitor
 In order to find an article I want to read
 I would like to be able to view articles by category
 ```
 
 ```
-As a registered user,
-In order to get an access to all articles,
+As a registered user
+In order to get an access to all articles
 I would like to be able to buy a subscription
 ```
 
 ```
-As a subscriber,
-In order to read a specific article,
+As a subscriber
+In order to read a specific article
 I would like to be able to click on an article and have it displayed
 ```
 
 ```
-As a visitor,
-In order to be able to read articles in my native language,
+As a visitor
+In order to be able to read articles in my native language
 I would like to switch languages between English and Swedish
 ```
 
@@ -79,5 +79,5 @@ MIT License
 - [Sanne Lindholm](https://github.com/salindholm)
 - [Kyungin Na](https://github.com/KyunginNa)
 - [Viktor Karlsson](https://github.com/ViktorHek)
-- [Erik](https://github.com/Ehugo2000)
+- [Erik Hugoson](https://github.com/Ehugo2000)
 - [Paulina Sobczak](https://github.com/psnoya)
